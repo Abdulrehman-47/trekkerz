@@ -1,0 +1,1725 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+
+body {
+    
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   overflow-x: clip;
+    
+}
+
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+
+
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: #fcfcfc;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 50%); /* Adds a subtle box shadow */
+}
+
+
+
+
+nav ul {
+  
+  display: flex;
+  margin-right: 250px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+
+
+nav ul li a.active {
+  color: #164727;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Change background color for "Customize Trip" */
+#customize-link {
+  background-color: #164727;
+  /* Add your desired color */
+  color: #ffffff;
+  /* Optional: Change text color */
+}
+
+#customize-link:hover {
+  background-color: #073513;
+  /* Change the hover color if needed */
+  color: white;
+  /* Optional: Keep the text color on hover */
+}
+
+
+/* CSS: FOR THE Under line animation in nav bar*/
+nav .menu-btn i {
+  margin-left: -100px;
+  color: #055222;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+
+
+nav ul li a {
+  color: #164727;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  position: relative;
+  /* Needed for the pseudo-element */
+  transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #164727;
+  /* Color of the underline */
+  transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  /* Full underline on hover */
+}
+
+
+
+/* END  CSS: FOR THE Under line animation in nav bar*/
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .menu-btn i {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 125px;
+    /* Adjusted to prevent overlap with the logo */
+    left: -111%;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When the checkbox is checked, show the menu */
+  #click:checked~ul {
+    left: -41px;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 22px;
+    /* Increased for mobile readability */
+    padding: 10px 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  /* When checked, reset the margin for animation */
+  #click:checked~ul li a {
+    margin-left: 0;
+  }
+
+  /* Mobile hover effects */
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* Larger mobile devices, slight adjustments */
+@media (max-width: 480px) {
+  nav .menu-btn i {
+    font-size: 21px;
+    /* Slightly smaller for very small screens */
+    margin-right: 50px;
+  }
+
+  nav ul {
+    top: 120px;
+    /* Adjusted for smaller screen heights */
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* Add this to your existing CSS */
+/* Between 921px and 1270px media query */
+@media (min-width: 921px) and (max-width: 1270px) {
+  nav {
+    padding: 0 20px;
+    /* Reduce padding to create more space */
+    justify-content: space-between;
+    /* Ensure the logo and menu items are spaced out evenly */
+  }
+
+  nav ul {
+    margin-right: 0;
+    /* Remove the large right margin to give more space */
+    flex-grow: 1;
+    /* Allow the ul to take up more space */
+    justify-content: flex-end;
+    /* Align the links to the right */
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    /* Allow the logo to take up its own space */
+    max-width: 30%;
+    /* Restrict the logo width to avoid overlap */
+  }
+
+  nav ul li {
+    margin: 0 10px;
+    /* Add consistent margin to prevent overflow */
+  }
+
+  nav ul li a {
+    padding: 6px 10px;
+    /* Slightly reduce padding to prevent wrapping */
+    font-size: 16px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+@media (max-width: 1400px) {
+  nav {
+    padding: 0 30px;
+    /* Reduce padding */
+
+  }
+
+
+
+  nav ul li a {
+
+    padding: 6px 10px;
+    /* Reduce padding around links */
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1005px) {
+  nav {
+    padding: 0 5px;
+    /* Reduce padding even more */
+    justify-content: space-between;
+  }
+
+  nav ul {
+    margin-right: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    max-width: 35%;
+    /* Reduce logo size further */
+  }
+
+  nav ul li {
+    margin: 0 3px;
+    /* Decrease margin between items */
+  }
+
+  nav ul li a {
+    padding: 4px 7px;
+    /* Reduce padding for links */
+    font-size: 14px;
+    /* Reduce font size for better fit */
+  }
+}
+
+
+@media (min-width: 1005px) and (max-width: 1500px) {
+  nav {
+    padding: 0 15px;
+    /* Adjust padding to create more space */
+    justify-content: space-between;
+    /* Ensure elements are spread evenly */
+  }
+
+  nav ul {
+
+    margin-right: 130px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    /* Ensure links align to the right */
+  }
+
+  nav .logo {
+    max-width: 30%;
+    /* Adjust logo size */
+    flex-grow: 1;
+    /* Make sure logo occupies its space */
+  }
+
+  nav ul li {
+    margin: 0 4px;
+    /* Slightly reduce space between menu items */
+  }
+
+  nav ul li a {
+    padding: 5px 9px;
+    /* Adjust padding to fit menu items */
+    font-size: 15px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+
+
+/* Cross button for the button */
+.close-btn {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #055222; /* Adjust color as needed */
+  font-size: 22px;
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Show close button on mobile */
+@media (max-width: 1000px) {
+  .close-btn {
+      display: block; /* Show the close button on mobile */
+  }
+}
+
+/* Adjust the positioning of the close button */
+@media (max-width: 1000px) {
+  .close-btn {
+      position: absolute;
+      top: 5px; /* Adjust as needed */
+      right: 6px; /* Adjust as needed */
+  }
+}
+
+/* Checkbox to control the menu visibility */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+/* When the checkbox is checked, hide the nav */
+input[type="checkbox"]:checked ~ ul {
+  left: -100%; /* Move the menu out of view */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      /* Style for dropdown container */
+/* Style for dropdown container */
+
+.dropdown {
+  position: relative;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
+}
+
+/* Style for dropdown links */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: #164727;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li a:hover {
+  background-color: #164727;
+  color: white;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown on hover */
+}
+
+/* Ensure dropdown menu aligns well for larger screens */
+@media (min-width: 1005px) {
+  .dropdown-content {
+    top: 100%;
+    left: 0;
+    max-height: none; /* Remove max-height for larger screens */
+    overflow: visible; /* Ensure all items are visible */
+  }
+}
+
+/* For smaller screens, ensure dropdown stays full width */
+@media (max-width: 1000px) {
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    max-height: 200px; /* Adjust as needed for mobile */
+    overflow-y: auto; /* Enable vertical scrolling on mobile */
+    z-index: 2000; /* Ensure it appears above other elements */
+  }
+
+  .dropdown-content li a {
+    padding: 12px;
+    font-size: 16px;
+   
+    background-color: #fff;
+  }
+
+  .dropdown-content li a:hover {
+    background-color: #164727;
+  }
+}
+
+
+
+
+                                          /* Styles for top contact section inside navbar */
+.top-contact {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 100px;
+
+  align-items: center;
+
+  color: rgb(15, 15, 15);
+  font-size: 14px;
+
+}
+
+.top-contact .contact-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-contact .contact-item i {
+  margin-right: 8px;
+}
+
+.top-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+/* Top Navbar */
+.top-nav {
+  width: 100%;
+  background-color: #e7f0ea;
+  /* Adjust the background color as needed */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+}
+
+.top-nav-content {
+  margin-left: -150px;
+  display: flex;
+  font-size: medium;
+  color: #164727;
+
+
+}
+
+.top-nav .contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.top-nav .contact-item i {
+  margin-right: 5px;
+}
+
+.top-nav a {
+  color: #164727;
+  text-decoration: none;
+}
+
+/* Main Navbar (your existing navbar) */
+@media (max-width: 1400px) {
+ 
+  .top-nav-content {
+    margin-left: -30px;
+  }
+}
+
+
+
+
+/* Media Queries for Large Mobiles */
+@media (max-width: 768px) {
+  .top-nav {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .top-nav-content {
+    font-size: small;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 3px;
+  }
+
+
+
+  nav a {
+    font-size: small;
+  }
+}
+
+/* Media Queries for Small Mobiles */
+@media (max-width: 480px) {
+  .top-nav {
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .top-nav-content {
+    font-size: x-small;
+    margin-left: -40px;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 2px;
+  }
+
+
+
+  nav a {
+    font-size: x-small;
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    position: relative; /* Required for positioning the pseudo-element */
+    text-align: center;
+    padding: 100px;
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+.container::before {
+    content: ""; /* Creates an empty pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/test-c5508.appspot.com/o/bg1.jpg?alt=media&token=b5a56528-c7b0-435f-ba03-bce509f1d13e);
+    background-size: cover; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Adjust the blur radius as needed */
+    z-index: 0; /* Places the background behind other content */
+}
+
+.container > * {
+    position: relative; /* Ensures content appears above the blurred background */
+    z-index: 1; /* Keeps the content above the pseudo-element */
+}
+
+
+
+h1 {
+    color: #004d00; /* Dark green color for the heading */
+    font-size: 24px; /* Font size */
+    margin: 0 auto; /* Center the heading by setting left/right margins to auto */
+    background-color: rgba(144, 238, 144, 0.9); /* Light green background */
+    padding: 10px 20px; /* Padding for the heading box */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Centers text inside the box */
+    border: 1px solid #4CAF50; /* Dark green border with thinner width */
+    width: fit-content; /* Make the width fit the content */
+    max-width: 90%; /* Optional: limits the width for larger screens */
+    margin-bottom: 3%;
+    margin-top: 4rem;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgb(0, 236, 0); /* Dark green shadow with more prominence */
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h2 {
+    color: #4CAF50;
+    margin: 15px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.card ul li {
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.card hr {
+    border: none;
+    border-top: 5px solid #4CAF50; /* Thicker green line */
+    margin: 20px 0; /* Space around the line */
+}
+
+     /* SERVICES SECTION */
+/* SERVICES SECTION */
+.services-container {
+    position: relative; /* Required for positioning the pseudo-element */
+    text-align: center;
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+.services-container::before {
+    content: ""; /* Creates an empty pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/test-c5508.appspot.com/o/background2.jpg?alt=media&token=f8ac16ae-3e09-4fd3-a86d-2e0615ea9393); /* Change this path to your image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.services-container > * {
+    position: relative; /* Ensures content appears above the blurred background */
+    z-index: 1; /* Keeps the content above the pseudo-element */
+}
+.services-container h2 {
+    color: #004d00; /* Dark green color for the heading */
+    font-size: 24px; /* Font size */
+    margin: 0 auto; /* Center the heading by setting left/right margins to auto */
+    background-color: rgba(144, 238, 144, 0.9); /* Light green background */
+    padding: 10px 20px; /* Padding for the heading box */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Centers text inside the box */
+    border: 1px solid #4CAF50; /* Dark green border with thinner width */
+    width: fit-content; /* Make the width fit the content */
+    max-width: 90%; /* Optional: limits the width for larger screens */
+    margin-bottom: 3%;
+    margin-top: 4rem;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    
+}
+
+.services-row {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: nowrap; /* Ensure items stay in their respective rows */
+}
+
+.service-item {
+    background-color: #d4e8d5;
+    padding: 15px;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgb(0, 236, 0); /* Dark green shadow with more prominence */
+}
+
+.service-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.service-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjust the space between the images */
+    margin-bottom: 10px;
+}
+
+.service-item img {
+    width: 60px; /* Adjust size as necessary */
+    height: 60px; /* Adjust size as necessary */
+}
+
+
+/*********************************NOT INCLUDE ****************/
+
+
+.background-wrapper {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/test-c5508.appspot.com/o/background3.jpg?alt=media&token=ee3068de-6e87-4e42-bee9-dae6e2790bd1'); /* Background image for full viewport */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 60vh; /* Ensures the wrapper takes the full height of the viewport */
+    display: flex; /* Centers content */
+    flex-direction: column; /* Aligns children vertically */
+    align-items: center; /* Centers children horizontally */
+    justify-content: flex-start; /* Aligns children to the top */
+    position: relative; /* Required for positioning */
+}
+
+.heading-container {
+    background-color: rgba(144, 238, 144, 0.9); /* Light green background */
+    padding: 10px 20px; /* Padding for the heading box */
+    border-radius: 10px; /* Rounded corners */
+    margin: 5rem; /* Remove margins to position it at the top */
+    text-align: center; /* Centers text inside the box */
+}
+
+.heading-container h2 {
+    color: #004d00; /* Dark green color for the heading */
+    margin: 0; /* Remove default margin */
+}
+
+.not-included-container {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: rgba(231, 243, 231, 0.9); /* Light green background */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 650px; /* Centered container with a max width */
+    position: relative; /* Ensures the container is positioned correctly */
+    overflow: hidden; /* Prevents overflow of child elements */
+}
+
+.not-included-container ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.9); /* White background inside the list */
+}
+.not-included-container ul li {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center align items vertically */
+    font-size: 16px;
+    position: relative;
+    padding-left: 20px; /* Space for bullet points */
+    border-bottom: 1px solid #ccc; /* Divider line between items */
+    padding-bottom: 10px;
+    justify-content: space-between; /* Space between text and image */
+}
+.not-included-container ul li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.not-included-container ul li::before {
+    content: "\2022"; /* Bullet point */
+    color: #4caf50; /* Green color for bullet */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.not-included-container ul li img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 0; /* Aligns images to the center vertically */
+}
+
+
+
+
+/*********************form***************/
+ 
+
+/* General background container styling */
+.background-container {
+    display: flex;
+    flex-direction: column; /* Stack header and form container vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 20px; /* Space between header and form container */
+}
+
+header h1 {
+    font-size: 1.6rem; /* Larger font size for the header */
+    color: #004d00; /* Dark green color */
+    margin-top: 1rem;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: rgba(231, 243, 231, 0.9); /* Light green background */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    color: #333; /* Darker text color for readability */
+    margin-bottom: 1rem
+}
+
+/* Form styling */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Fieldset and Legend styling */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Darker text color */
+}
+
+/* Group form elements */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555; /* Slightly darker label color */
+}
+
+/* Input and select styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: white; /* White input background */
+    color: black; /* Black text color */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="datetime-local"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/*********************** footer section ************************/
+
+
+/* General footer styles */
+footer {
+    background-color: #264E36; /* Dark green background */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif; /* Ensure consistent font */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin: 20px;
+    flex: 1;
+    min-width: 200px; /* Ensure a minimum width for better layout */
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px; /* Slightly larger font size for headings */
+}
+
+.latest-updates form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between input and button */
+}
+
+.latest-updates input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Ensure input takes full width */
+    max-width: 300px; /* Limit width for larger screens */
+}
+
+.latest-updates button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    cursor: pointer;
+}
+
+.latest-updates button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.more-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.more-info ul li {
+    margin: 10px 0;
+}
+
+.more-info ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; /* Slightly larger font size */
+}
+
+.more-info ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px; /* Larger icon size */
+}
+
+.social-icons a:hover {
+    color: #4CAF50; /* Green color on hover */
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+    font-size: 14px; /* Slightly smaller font size */
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.developer-credit {
+    font-size: 20px; /* Adjust font size as needed */
+    color: #ffffff; /* Set a neutral color for the text */
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some space above */
+}
+
+.developer-credit a {
+    color: #000000; /* Set the link color */
+    text-decoration: none; /* Remove the underline */
+    font-weight: bold; /* Make the link bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.developer-credit a:hover {
+    color: #000000; /* Change link color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center; /* Center items on mobile */
+    }
+
+    .footer-section {
+        margin: 10px 0; /* Adjust margin */
+    }
+
+    .latest-updates form {
+        gap: 5px; /* Reduce gap on mobile */
+    }
+
+    .latest-updates input[type="email"] {
+        max-width: 100%; /* Ensure full width on small screens */
+    }
+
+    .latest-updates button {
+        width: 100%; /* Ensure button takes full width */
+    }
+
+    .social-icons {
+        margin: 10px 0; /* Adjust margin for better spacing */
+    }
+    .heading-container h2 {
+        color: #004d00; /* Dark green color for the heading */
+        margin: 0; /* Remove default margin */
+        font-size: 1.3rem;
+    }
+}
+
+
+/* Responsive Design  OF NOT INCLUDE */
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .services-container {
+        padding: 10px; /* Add padding for mobile screens */
+    }
+    .services-container h2 {
+        font-size: 20px; /* Reduce font size */
+        padding: 8px 15px; /* Adjust padding */
+        max-width: 100%; /* Ensure heading does not exceed screen width */
+    }
+
+    .services {
+        gap: 20px; /* Reduce gap between sections */
+    }
+
+    .services-row {
+        flex-direction: column; /* Stack rows vertically on small screens */
+        gap: 40px; /* Adjust gap */
+    }
+
+    .service-item {
+        width: 150px; /* Adjust width for smaller screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .service-item p {
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .service-images {
+        gap: 10px; /* Reduce space between images */
+    }
+
+    .service-item img {
+        width: 70px; /* Adjust image size */
+        height: 70px; /* Maintain aspect ratio */
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 900px) {
+    .services-container {
+        padding: 15px; /* Add padding */
+    }
+
+    .services-container h2 {
+        font-size: 22px; /* Adjust font size */
+        padding: 9px 18px; /* Adjust padding */
+        max-width: 100%; /* Ensure heading fits within container */
+    }
+
+    .services {
+        gap: 60px; /* Adjust gap */
+    }
+
+    .services-row {
+        flex-direction: row; /* Keep rows in a single line */
+        flex-wrap: wrap; /* Allow wrapping on smaller tablets */
+        gap: 60px; /* Adjust gap */
+    }
+
+    .service-item {
+        width: 130px; /* Adjust width */
+        padding: 12px; /* Adjust padding */
+    }
+
+    .service-item p {
+        font-size: 13px; /* Adjust font size */
+    }
+
+    .service-images {
+        gap: 12px; /* Adjust space between images */
+    }
+
+    .service-item img {
+        width: 55px; /* Adjust image size */
+        height: 55px; /* Maintain aspect ratio */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 901px) {
+    .services-container {
+        padding: 20px; /* Maintain padding */
+    }
+
+    .services-container h2 {
+        font-size: 24px; /* Maintain font size */
+        padding: 10px 20px; /* Maintain padding */
+    }
+
+    .services {
+        gap: 80px; /* Maintain gap */
+    }
+
+    .services-row {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 80px; /* Maintain gap */
+    }
+
+    .service-item {
+        width: 150px; /* Maintain width */
+        padding: 15px; /* Maintain padding */
+    }
+
+    .service-item p {
+        font-size: 14px; /* Maintain font size */
+    }
+
+    .service-images {
+        gap: 15px; /* Maintain space between images */
+    }
+
+    .service-item img {
+        width: 60px; /* Maintain image size */
+        height: 60px; /* Maintain aspect ratio */
+    }
+}
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        border: 1px solid #4CAF50; /* Maintain border styling */
+        width: auto; /* Make the width auto to fit smaller screens */
+        margin-bottom: 2%; /* Adjust margin for smaller screens */
+        margin-top: 2rem; /* Adjust margin for smaller screens */
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center; /* Center cards horizontally */
+    }
+
+    .card {
+        width: 100%; /* Make cards full width on smaller screens */
+        max-width: 300px; /* Set a max-width to prevent cards from becoming too large */
+        margin: 10px 0; /* Adjust margins to fit smaller screens */
+    }
+
+    .card img {
+        width: 100%; /* Ensure images fill the card width */
+    }
+
+    button {
+        padding: 12px 24px; /* Adjust button padding for touch screens */
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                               /*********************** footer section ************************/
+
+
+/* General footer styles */
+footer {
+  background-color: #164727;
+  /* Dark green background */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  /* Ensure consistent font */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin: 20px;
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for better layout */
+}
+
+.footer-section h3 {
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+  font-size: 18px;
+  /* Slightly larger font size for headings */
+}
+
+.latest-updates form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Space between input and button */
+}
+
+.latest-updates input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  /* Ensure input takes full width */
+  max-width: 300px;
+  /* Limit width for larger screens */
+}
+
+.latest-updates button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.latest-updates button:hover {
+  background-color: #45a049;
+  /* Slightly darker green on hover */
+}
+
+.more-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-info ul li {
+  margin: 10px 0;
+}
+
+.more-info ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  /* Slightly larger font size */
+}
+
+.more-info ul li a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  /* Larger icon size */
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+  /* Green color on hover */
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 14px;
+  /* Slightly smaller font size */
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  /* Underline .developer-credit {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #ffffff;
+  /* Set a neutral color for the text */
+  text-align: center;
+  /* Center the text */
+  margin-top: 20px;
+  /* Add some space above */
+}
+
+.developer-credit a {
+  color: #000000;
+  /* Set the link color */
+  text-decoration: none;
+  /* Remove the underline */
+  font-weight: bold;
+  /* Make the link bold */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.developer-credit a:hover {
+  color: #000000;
+  /* Change link color on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+
+.developer-credit {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.developer-credit a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.developer-credit a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+  /* Ensures the input fields take full width within their container */
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+
+/*********************** footer section ************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-icon {
+  width: 67%;
+  height: 100%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.image-container {
+  background-color: #0e3c26;
+  text-align: center; /* Center the image horizontally */
+  margin-bottom: 20px; /* Space between the image and background container */
+}
+
+.header-image {
+  width: 100%; /* Make the image responsive to the screen size */
+  max-width: 1200px; /* Limit the image width */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+}

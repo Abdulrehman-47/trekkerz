@@ -1,0 +1,3332 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  
+  overflow-x: clip;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+.background1 {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/trakkerz-c2667.appspot.com/o/background.jpg?alt=media&token=b3881a24-aed7-4a5b-9613-4c8c69f09ad9');
+    background-size: cover; /* Adjust this property as needed */
+    background-position: center; /* Adjust this property as needed */
+}
+
+
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: #fcfcfc;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 50%); /* Adds a subtle box shadow */
+}
+
+
+
+
+nav ul {
+  
+  display: flex;
+  margin-right: 100px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+
+
+nav ul li a.active {
+  color: #164727;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Change background color for "Customize Trip" */
+#customize-link {
+  background-color: #164727;
+  /* Add your desired color */
+  color: #ffffff;
+  /* Optional: Change text color */
+}
+
+#customize-link:hover {
+  background-color: #073513;
+  /* Change the hover color if needed */
+  color: white;
+  /* Optional: Keep the text color on hover */
+}
+
+
+/* CSS: FOR THE Under line animation in nav bar*/
+nav .menu-btn i {
+  color: #055222;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  text-align: right;
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+
+
+nav ul li a {
+  color: #164727;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  position: relative;
+  /* Needed for the pseudo-element */
+  transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #164727;
+  /* Color of the underline */
+  transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  /* Full underline on hover */
+}
+
+
+
+/* END  CSS: FOR THE Under line animation in nav bar*/
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .menu-btn i {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 151px;
+    /* Adjusted to prevent overlap with the logo */
+    left: -100%;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When the checkbox is checked, show the menu */
+  #click:checked~ul {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 22px;
+    /* Increased for mobile readability */
+    padding: 10px 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  /* When checked, reset the margin for animation */
+  #click:checked~ul li a {
+    margin-left: 0;
+  }
+
+  /* Mobile hover effects */
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* Larger mobile devices, slight adjustments */
+@media (max-width: 480px) {
+  nav .menu-btn i {
+    font-size: 21px;
+    /* Slightly smaller for very small screens */
+    margin-right: 50px;
+  }
+
+  nav ul {
+    top: 135px;
+    /* Adjusted for smaller screen heights */
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* Add this to your existing CSS */
+/* Between 921px and 1270px media query */
+@media (min-width: 921px) and (max-width: 1270px) {
+  nav {
+    padding: 0 20px;
+    /* Reduce padding to create more space */
+    justify-content: space-between;
+    /* Ensure the logo and menu items are spaced out evenly */
+  }
+
+  nav ul {
+    margin-right: 0;
+    /* Remove the large right margin to give more space */
+    flex-grow: 1;
+    /* Allow the ul to take up more space */
+    justify-content: flex-end;
+    /* Align the links to the right */
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    /* Allow the logo to take up its own space */
+    max-width: 30%;
+    /* Restrict the logo width to avoid overlap */
+  }
+
+  nav ul li {
+    margin: 0 10px;
+    /* Add consistent margin to prevent overflow */
+  }
+
+  nav ul li a {
+    padding: 6px 10px;
+    /* Slightly reduce padding to prevent wrapping */
+    font-size: 16px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+@media (max-width: 1400px) {
+  nav {
+    padding: 0 30px;
+    /* Reduce padding */
+
+  }
+
+
+
+  nav ul li a {
+
+    padding: 6px 10px;
+    /* Reduce padding around links */
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1005px) {
+  nav {
+    padding: 0 5px;
+    /* Reduce padding even more */
+    justify-content: space-between;
+  }
+
+  nav ul {
+    margin-right: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    max-width: 35%;
+    /* Reduce logo size further */
+  }
+
+  nav ul li {
+    margin: 0 3px;
+    /* Decrease margin between items */
+  }
+
+  nav ul li a {
+    padding: 4px 7px;
+    /* Reduce padding for links */
+    font-size: 14px;
+    /* Reduce font size for better fit */
+  }
+}
+
+
+@media (min-width: 1005px) and (max-width: 1500px) {
+  nav {
+    padding: 0 15px;
+    /* Adjust padding to create more space */
+    justify-content: space-between;
+    /* Ensure elements are spread evenly */
+  }
+
+  nav ul {
+    flex-grow: 1;
+   
+
+    justify-content: flex-end;
+    /* Ensure links align to the right */
+  }
+
+  nav .logo {
+    max-width: 30%;
+    /* Adjust logo size */
+    flex-grow: 1;
+    /* Make sure logo occupies its space */
+  }
+
+  nav ul li {
+    margin: 0 4px;
+    /* Slightly reduce space between menu items */
+  }
+
+  nav ul li a {
+    padding: 5px 9px;
+    /* Adjust padding to fit menu items */
+    font-size: 15px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+
+
+/* Cross button for the button */
+.close-btn {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #055222; /* Adjust color as needed */
+  font-size: 22px;
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Show close button on mobile */
+@media (max-width: 1000px) {
+  .close-btn {
+      display: block; /* Show the close button on mobile */
+  }
+}
+
+/* Adjust the positioning of the close button */
+@media (max-width: 1000px) {
+  .close-btn {
+      position: absolute;
+      top: 5px; /* Adjust as needed */
+      right: 6px; /* Adjust as needed */
+  }
+}
+
+/* Checkbox to control the menu visibility */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+/* When the checkbox is checked, hide the nav */
+input[type="checkbox"]:checked ~ ul {
+  left: -100%; /* Move the menu out of view */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      /* Style for dropdown container */
+/* Style for dropdown container */
+
+.dropdown {
+  position: relative;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
+}
+
+/* Style for dropdown links */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: #164727;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li a:hover {
+  background-color: #164727;
+  color: white;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown on hover */
+}
+
+/* Ensure dropdown menu aligns well for larger screens */
+@media (min-width: 1005px) {
+  .dropdown-content {
+    top: 100%;
+    left: 0;
+    max-height: none; /* Remove max-height for larger screens */
+    overflow: visible; /* Ensure all items are visible */
+  }
+}
+
+/* For smaller screens, ensure dropdown stays full width */
+@media (max-width: 1000px) {
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    max-height: 200px; /* Adjust as needed for mobile */
+    overflow-y: auto; /* Enable vertical scrolling on mobile */
+    z-index: 2000; /* Ensure it appears above other elements */
+  }
+
+  .dropdown-content li a {
+    padding: 4px;
+    font-size: 16px;
+    
+    background-color: #fff;
+  }
+
+  .dropdown-content li a:hover {
+    background-color: #164727;
+  }
+}
+
+
+
+
+                                          /* Styles for top contact section inside navbar */
+.top-contact {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 100px;
+
+  align-items: center;
+
+  color: rgb(15, 15, 15);
+  font-size: 14px;
+
+}
+
+.top-contact .contact-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-contact .contact-item i {
+  margin-right: 8px;
+}
+
+.top-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+/* Top Navbar */
+.top-nav {
+  width: 100%;
+  background-color: #e7f0ea;
+  /* Adjust the background color as needed */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+}
+
+.top-nav-content {
+  display: flex;
+  font-size: medium;
+  color: #164727;
+
+
+}
+
+.top-nav .contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.top-nav .contact-item i {
+  margin-right: 5px;
+}
+
+.top-nav a {
+  color: #164727;
+  text-decoration: none;
+}
+
+/* Main Navbar (your existing navbar) */
+
+
+
+
+
+/* Media Queries for Large Mobiles */
+@media (max-width: 768px) {
+  .top-nav {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .top-nav-content {
+    font-size: small;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 3px;
+  }
+
+
+
+  nav a {
+    font-size: small;
+  }
+}
+
+/* Media Queries for Small Mobiles */
+@media (max-width: 480px) {
+  .top-nav {
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .top-nav-content {
+    font-size: x-small;
+    margin-left: -40px;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 2px;
+  }
+
+
+
+  nav a {
+    font-size: x-small;
+  }
+}
+ 
+
+
+
+
+
+                                                     /* OVAL 3 SECTION */
+.oval {
+  width: 200px;
+  /* Adjust size as needed */
+  height: 200px;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  /* Optional: background color if image not loaded */
+  border: 5px solid #055222;
+  box-shadow:6px 6px 6px #0000009c;
+}
+
+
+.oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Position each oval with margin adjustments */
+
+
+
+
+
+.oval-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+}
+
+
+
+.oval.one {
+  position: absolute;
+  top: -500px;
+  /* Adjust as needed */
+  left: 1250px;
+  /* Adjust as needed */
+
+}
+
+.oval.two {
+  position: absolute;
+  top: -330px;
+  /* Adjust as needed */
+  left: 1500px;
+  /* Adjust as needed */
+}
+
+.oval.three {
+  position: absolute;
+  top: -150px;
+  /* Adjust as needed */
+  left: 1250px;
+  /* Adjust as needed */
+}
+
+
+.info-box {
+  margin-top: 100px;
+  margin-left: 60px;
+  background-color: #d0e8c6;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 500px;
+  box-shadow: 5px 5px 5px #0000009c;
+  font-size: 16px;
+  border: 4px solid #014b1e;
+}
+
+.book-now-wrapper {
+  margin-top: 2px;
+  margin-left: 230px;
+  position: relative;
+}
+
+.book-now-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0; /* Keep the line aligned properly */
+  top: -10px;
+  width: 140px; /* Fixed width for the line */
+  border-top: 3px solid #055222;
+}
+
+.book-now {
+  display: inline-block;
+  background-color: #fff;
+  color: #096327;
+  font-family: unset;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px #000000c7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.book-now:hover {
+  background-color: #b8d89a;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+  .info-box {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 15px;
+    max-width: calc(100% - 40px);
+    font-size: 14px;
+  }
+
+  .book-now-wrapper {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .book-now-wrapper::before {
+    left: 50%; /* Center the line on mobile */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 170px; /* Keep the same fixed width for the line */
+  }
+
+  .book-now {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+
+.text-box {
+  position: absolute;
+  /* Absolute positioning for flexibility */
+  background-color: #ffffff;
+  /* Background color for the text box */
+  padding: 12px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px #000000c7;
+  max-width: 200px;
+  /* Adjust width as needed */
+  text-align: center;
+  font-weight: 500;
+  color: #055222;
+  font-size: 16px;
+  /* Adjust font size as needed */
+}
+
+/* Position each text box under corresponding oval */
+#text-box-1 {
+  top: -280px;
+  /* Adjust based on your needs */
+  left: 1280px;
+  /* Adjust based on your needs */
+}
+
+#text-box-2 {
+  top: -110px;
+  /* Adjust based on your needs */
+  left: 1550px;
+  /* Adjust based on your needs */
+}
+
+#text-box-3 {
+  top: 70px;
+  /* Adjust based on your needs */
+  left: 1280px;
+  /* Adjust based on your needs */
+}
+
+
+
+
+.main {
+  font-size: 36px;
+  margin-top: 150px;
+  margin-left: 850px;
+  font-family: serif;
+
+  background-color: #d0e8c6;
+  /* Background color for the text box */
+  padding: 5px;
+  /* Padding inside the text box */
+  border-radius: 15px;
+  /* Rounded corners */
+  box-shadow: 5px 5px 5px #0000009c;
+  max-width: 270px;
+  /* Adjust width as needed */
+  text-align: center;
+  color: #014b1e;
+  /* Center the text */
+}
+
+/* Masdsadddddddddddddd
+                                                sad
+                                                
+                                                asd
+                                                sda
+                                                asd
+                                                
+                                                asdasdsadasdasdas
+                                                asd
+                                                sd
+                                                
+                                                sda
+                                                */
+
+
+/*/* Media query for large desktop screens (e.g., 1440px and larger) */
+@media (min-width: 1440px) {
+  .oval.one {
+    left: 1300px;
+    /* Adjust position for large screens */
+  }
+
+  .oval.two {
+    left: 1100px;
+    /* Adjust position for large screens */
+  }
+
+  .oval.three {
+    left: 1300px;
+    /* Adjust position for large screens */
+  }
+
+  .text-box#text-box-1 {
+    left: 1330px;
+    /* Align with oval.one */
+  }
+
+  .text-box#text-box-2 {
+    left: 1141px;
+    /* Align with oval.two */
+  }
+
+  .text-box#text-box-3 {
+    left: 1327px;
+    /* Align with oval.three */
+  }
+}
+
+/* Media query for standard desktop and laptops (1270px to 1440px) */
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .oval.one {
+    left: 800px;
+    /* Adjust position for medium-large screens */
+  }
+
+  .oval.two {
+    left: 990px;
+    /* Adjust position for medium-large screens */
+  }
+
+  .oval.three {
+    left: 800px;
+    /* Adjust position for medium-large screens */
+  }
+
+  .text-box#text-box-1 {
+    left: 820px;
+    /* Align with oval.one */
+  }
+
+  .text-box#text-box-2 {
+    left: 1020px;
+    /* Align with oval.two */
+  }
+
+  .text-box#text-box-3 {
+    left: 820px;
+    /* Align with oval.three */
+  }
+}
+
+/* Media query for tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .oval.one {
+    left: 700px;
+    /* Adjust position for tablets */
+  }
+
+  .oval.two {
+    left: 850px;
+    /* Adjust position for tablets */
+  }
+
+  .oval.three {
+    left: 700px;
+    /* Adjust position for tablets */
+  }
+
+  .text-box#text-box-1 {
+    left: 720px;
+    /* Align with oval.one */
+  }
+
+  .text-box#text-box-2 {
+    left: 870px;
+    /* Align with oval.two */
+  }
+
+  .text-box#text-box-3 {
+    left: 720px;
+    /* Align with oval.three */
+  }
+}
+
+
+
+
+/* Masdsadddddddddddddd
+                                                sad
+                                                
+                                                asd
+                                                sda
+                                                asd
+                                                
+                                                asdasdsadasdasdas
+                                                asd
+                                                sd
+                                                
+                                                sda
+                                                */
+
+
+
+
+/* OVAL 123 SECTION */
+
+
+
+
+                                                     /* Affilaction banner with text */
+
+
+
+
+.banner {
+  box-shadow: 5px 5px 5px #0000009c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #C7E2CA;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  /* Allow wrapping of images */
+}
+
+.banner img {
+  max-height: 100px;
+  max-width: 150px;
+}
+
+/* For tablets and small devices */
+@media (max-width: 768px) {
+
+
+  .banner {
+    margin-bottom: -80px;
+    flex-direction: row;
+    /* Keep images in a row */
+    flex-wrap: wrap;
+    /* Allow wrapping */
+    padding: 10px;
+    /* Reduce padding */
+  }
+
+  .banner img {
+    max-height: 100px;
+    /* Further reduce image size */
+    max-width: 80px;
+    /* Adjust width */
+    margin: 5px;
+    /* Space between images */
+    flex: 1 1 calc(50% - 10px);
+    /* Set width to 50% minus margin for two per row */
+    object-fit: contain;
+    /* Maintain aspect ratio */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+
+  .banner {
+
+    flex-direction: row;
+    /* Keep images in a row */
+    flex-wrap: wrap;
+    /* Allow wrapping */
+    padding: 5px;
+    /* Further reduce padding */
+  }
+
+  .banner img {
+    max-height: 80px;
+    /* Further reduce image size */
+    max-width: 60px;
+    /* Adjust width */
+    margin: 5px;
+    /* Space between images */
+    flex: 1 1 calc(50% - 10px);
+    /* Set width to 50% minus margin for two per row */
+    object-fit: contain;
+    /* Maintain aspect ratio */
+  }
+}
+
+/* Large screens (PCs, Laptops) */
+@media (min-width: 1024px) {
+  .main {
+    font-size: 36px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 270px;
+  }
+}
+
+/* For tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .main {
+    font-size: 30px;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 240px;
+  }
+}
+
+/* For smaller tablets and large phones */
+@media (max-width: 768px) and (min-width: 480px) {
+  .main {
+    font-size: 28px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 220px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .main {
+    font-size: 24px;
+    margin-top: 80px;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+  }
+}
+
+
+/* Affilaction banner with text */
+
+
+
+
+
+
+
+
+/*cards container*/
+
+
+
+
+
+
+
+
+label {
+  flex: 1;
+
+  padding-right: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+.content {
+  color: #055222;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  margin-top: 28px;
+  font-size: 15px;
+  margin: 28px auto;
+  /* Center the text and add margin-top */
+  width: 80%;
+  /* Adjust this value to control the width of the content */
+  text-align: center;
+  /* Optional: center the text */
+}
+
+
+
+button {
+  background-color: #174206;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  /* Allows the use of absolute positioning for the line */
+}
+
+button::before {
+  content: "";
+  /* Creates a pseudo-element for the line */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centers the line horizontally above the button */
+  top: -10px;
+  /* Adjusts the distance of the line from the button */
+  width: 200%;
+  /* Adjusts the length of the line */
+  border-top: 2px solid #055222;
+  /* Green line above the button */
+}
+
+
+
+
+
+
+
+
+
+/*cards container END*/
+
+
+
+
+
+/*form section?*/
+
+
+
+.form-container {
+  background-color: rgb(179, 236, 181);
+  padding: 15px;
+  max-width: 1200px;
+  box-shadow: 5px 5px 5px #0000009c;
+  margin: 160px auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  /* Distributes space evenly */
+  align-items: flex-start;
+  /* Aligns items at the start of the container */
+  flex-wrap: wrap;
+}
+
+.form-section {
+  flex: 1;
+  min-width: 10px;
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #3a3a3a;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 550;
+  color: #3a3a3a;
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+  /* Ensures the input fields take full width within their container */
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+select {
+  background-color: rgb(255, 255, 255);
+  appearance: none;
+  /* Removes default styling */
+}
+
+/* General styling for all form sections */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+/* Specific styling for each form section */
+.what-section,
+.when-section,
+.where-section,
+.guests-section {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.when-section {
+  margin-left: 250px;
+  margin-top: -228px;
+  padding-right: 300px;
+}
+
+.where-section {
+  margin-left: 530px;
+  margin-top: -268px;
+  padding-right: 40px;
+}
+
+.guests-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: -20px;
+  /* Adjust the value as needed */
+}
+
+.guests-section label {
+  margin-bottom: 1px;
+}
+
+.guests-section input[type="number"],
+.guests-section input[type="text"] {
+  width: 250px;
+  padding: 16px;
+  font-size: 16px;
+
+}
+
+.guests-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+
+.book-button {
+  margin-top: 20px;
+  /* Space above the button */
+  padding: 10px 20px;
+  /* Adjust padding for the button */
+  background-color: #29692b;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  border: none;
+  border-radius: 20px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  font-size: 1.2em;
+  margin-right: 200px;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1160px) {
+  .guests-section {
+    margin-left: -70px;
+    /* Move the section to the left */
+  }
+
+  .guests-section h3 {
+    font-size: 1.3em;
+    /* Reduce the font size for h3 */
+    margin-bottom: 18px;
+  }
+
+  .guests-section label {
+    font-size: 1em;
+    /* Reduce font size for labels */
+  }
+
+  .guests-section input[type="number"],
+  .guests-section input[type="text"] {
+    width: 200px;
+    /* Reduce the width of input fields */
+    padding: 12px;
+    /* Adjust padding as needed */
+    font-size: 0.9em;
+    /* Reduce font size for input fields */
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1160px) {
+  .where-section {
+
+    padding-right: 100px;
+    /* Adjust padding as needed */
+  }
+
+  .where-section h3 {
+    font-size: 1.3em;
+    /* Reduce font size for the heading */
+    margin-bottom: 21px;
+    /* Adjust spacing as needed */
+  }
+
+  .where-section label {
+    font-size: 0.9em;
+    /* Reduce font size for labels */
+  }
+
+  .where-section input[type="date"],
+  .where-section input[type="text"],
+  .where-section input[type="number"],
+  .where-section select {
+    width: 200px;
+    /* Reduce width of input fields and select boxes */
+    padding: 12px;
+    /* Adjust padding as needed */
+    font-size: 0.9em;
+    /* Reduce font size for input fields */
+  }
+
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1160px) {
+  .when-section {
+
+    padding-right: 20px;
+    /* Adjust padding as needed */
+  }
+
+  .when-section h3 {
+    font-size: 1.3em;
+    /* Reduce font size for the heading */
+    margin-bottom: 20px;
+    /* Adjust spacing as needed */
+  }
+
+  .when-section label {
+    font-size: 0.9em;
+    /* Reduce font size for labels */
+  }
+
+  .when-section input[type="date"],
+  .when-section input[type="text"],
+  .when-section input[type="number"],
+  .when-section select {
+    width: 200px;
+    /* Reduce width of input fields and select boxes */
+    padding: 12px;
+    /* Adjust padding as needed */
+    font-size: 0.9em;
+    /* Reduce font size for input fields */
+  }
+
+}
+
+
+
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+  .form-container {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .form-section {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  .what-section,
+  .when-section,
+  .where-section,
+  .guests-section {
+    margin: 0;
+    padding: 0;
+  }
+
+  .when-section,
+  .where-section,
+  .guests-section {
+    margin-top: 20px;
+  }
+
+
+
+  .book-button {
+    margin-top: 20px;
+    width: 90%;
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 30px;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  label {
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  input[type="date"],
+  input[type="text"],
+  input[type="number"],
+  select {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .book-button {
+    padding: 10px 0;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  label {
+    font-size: 0.8em;
+    margin-right: -40px;
+  }
+
+  input[type="date"],
+  input[type="text"],
+  input[type="number"],
+  select {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+
+  .book-button {
+    padding: 8px 0;
+    font-size: 0.9em;
+  }
+}
+
+
+
+
+@media screen and (max-width: 1700px) {
+  .guests-section {
+    margin-left: 0;
+    padding-right: 10px;
+  }
+
+  .book-button {
+
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/* FROM  section END HERE */
+
+
+
+
+.extra {
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 80px;
+  margin-bottom: -100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: serif;
+  background-color: #d0e8c6;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px #0000009c;
+  max-width: 200px;
+  text-align: center;
+  color: #014b1e;
+  display: block; /* Ensure it behaves as a block element */
+}
+
+/* For medium to large tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .extra {
+    font-size: 28px;
+    margin-top: 60px;
+    max-width: 220px; /* Slightly smaller width */
+    margin-left: auto;  /* Center align */
+    margin-right: auto; /* Center align */
+  }
+}
+
+/* For tablets and large mobile screens */
+@media (max-width: 768px) {
+  .extra {
+    font-size: 28px;
+    margin-top: 122px;
+    margin-left: auto;  /* Center align */
+    margin-right: auto; /* Center align */
+    max-width: 180px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .extra {
+    font-size: 22px;
+    margin-top: 125px;
+    margin-bottom: -113px; /* Slight adjustment for mobile */
+    max-width: 140px; /* Further adjust width for small screens */
+    margin-left: auto;  /* Center align */
+    margin-right: auto; /* Center align */
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 320px) {
+  .extra {
+    font-size: 14px;
+    margin-top: 127px;
+    margin-bottom: -113px;
+    max-width: 120px;
+    margin-left: auto;  /* Center align */
+    margin-right: auto; /* Center align */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cars section */
+
+
+.montainer {
+  margin-top: -800px;
+  position: relative;
+  /* Required for positioning the pseudo-element */
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+  /* Ensures the pseudo-element doesn't overflow */
+}
+
+.montainer::before {
+  content: "";
+  /* Creates an empty pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/test-c5508.appspot.com/o/bg1.jpg?alt=media&token=b5a56528-c7b0-435f-ba03-bce509f1d13e);
+  background-size: cover;
+  /* Adjust as needed */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  /* Places the background behind other content */
+}
+
+.montainer>* {
+  position: relative;
+  /* Ensures content appears above the blurred background */
+  z-index: 1;
+  /* Keeps the content above the pseudo-element */
+}
+
+
+
+h1 {
+  box-shadow: 5px 5px 5px #0000009c ;
+  color: #014b1e;
+  /* Dark green color for the heading */
+  font-family: serif;
+  font-size: 30px;
+  /* Font size */
+  margin: 0 auto;
+  /* Center the heading by setting left/right margins to auto */
+  background-color: #d0e8c6;
+  /* Light green background */
+  padding: 10px 20px;
+  /* Padding for the heading box */
+  border-radius: 10px;
+  /* Rounded corners */
+  text-align: center;
+  /* Centers text inside the box */
+  border: 1px solid #4CAF50;
+  /* Dark green border with thinner width */
+  width: fit-content;
+  /* Make the width fit the content */
+  max-width: 90%;
+  /* Optional: limits the width for larger screens */
+  margin-bottom: 3%;
+  margin-top: 4rem;
+}
+
+.mard-montainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mard {
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  border: 4px solid #055222;
+}
+
+.mard img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.mard h2 {
+  color: #125515;
+  margin: 15px 0;
+}
+
+.jrice {
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.mard ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.mard ul li {
+  margin: 5px 0;
+}
+
+button {
+  background-color: #257528;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  .montainer {
+    padding: 19px;
+    /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 20px;
+    /* Adjust font size for smaller screens */
+    padding: 8px 16px;
+    /* Adjust padding for smaller screens */
+    border: 1px solid #4CAF50;
+    /* Maintain border styling */
+    width: auto;
+    /* Make the width auto to fit smaller screens */
+    margin-bottom: 2%;
+    /* Adjust margin for smaller screens */
+    margin-top: 2rem;
+    /* Adjust margin for smaller screens */
+  }
+
+  .mard-montainer {
+    flex-direction: column;
+    /* Stack cards vertically on small screens */
+    align-items: center;
+    /* Center cards horizontally */
+  }
+
+  .mard {
+    width: 100%;
+    /* Make cards full width on smaller screens */
+    max-width: 300px;
+    /* Set a max-width to prevent cards from becoming too large */
+    margin: 10px 0;
+    /* Adjust margins to fit smaller screens */
+  }
+
+  .mard img {
+    width: 100%;
+    /* Ensure images fill the card width */
+  }
+
+  button {
+    padding: 12px 24px;
+    /* Adjust button padding for touch screens */
+    font-size: 16px;
+    /* Adjust font size for better readability */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cars section end  */
+
+
+
+                               /*********************** footer section ************************/
+
+
+/* General footer styles */
+footer {
+  background-color: #164727;
+  /* Dark green background */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  /* Ensure consistent font */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin: 20px;
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for better layout */
+}
+
+.footer-section h3 {
+  color: #ccc;
+  margin-bottom: 15px;
+  font-size: 18px;
+  /* Slightly larger font size for headings */
+}
+
+.latest-updates form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Space between input and button */
+}
+
+.latest-updates input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  /* Ensure input takes full width */
+  max-width: 300px;
+  /* Limit width for larger screens */
+}
+
+.latest-updates button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.latest-updates button:hover {
+  background-color: #45a049;
+  /* Slightly darker green on hover */
+}
+
+.more-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-info ul li {
+  margin: 10px 0;
+}
+
+.more-info ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  /* Slightly larger font size */
+}
+
+.more-info ul li a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  /* Larger icon size */
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+  /* Green color on hover */
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 14px;
+  /* Slightly smaller font size */
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  /* Underline .developer-credit {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #ffffff;
+  /* Set a neutral color for the text */
+  text-align: center;
+  /* Center the text */
+  margin-top: 20px;
+  /* Add some space above */
+}
+
+.developer-credit a {
+  color: #000000;
+  /* Set the link color */
+  text-decoration: none;
+  /* Remove the underline */
+  font-weight: bold;
+  /* Make the link bold */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.developer-credit a:hover {
+  color: #000000;
+  /* Change link color on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+
+.developer-credit {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.developer-credit a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.developer-credit a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+/*********************** footer section ************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************** TESTIMONIAL AND REVIEW CSS ************************/
+    
+section {
+  text-align: center;
+
+  position: relative;
+  padding: 30px 0;
+  background: #fcfcfd;
+  z-index: 1;
+  width: 100%;
+}
+
+.section-title {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.section-title p {
+  color: #7d93b2;
+  font-size: 13px;
+  line-height: 20px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.section-title h2 {
+  float: left;
+  width: 100%;
+  text-align: center;
+  color: #296f2c;
+  font-size: 34px;
+  font-weight: 800;
+  position: relative;
+}
+
+.section-separator {
+  float: left;
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+}
+
+.section-separator:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 3px;
+  width: 50px;
+  border-radius: 3px;
+  z-index: 2;
+  background-color: #206522;
+  margin-left: -25px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.listing-carousel-button {
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: -25px;
+  z-index: 100;
+  cursor: pointer;
+  background: #2e6730;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.45);
+  transition: all 200ms linear;
+  outline: none;
+}
+
+.listing-carousel-button.listing-carousel-button-next {
+  right: -30px;
+  padding-right: 20px;
+  border-radius: 60px 0 0 60px;
+}
+
+.listing-carousel-button.listing-carousel-button-prev {
+  left: -30px;
+  padding-left: 20px;
+  border-radius: 0 60px 60px 0;
+}
+
+.listing-carousel-button.listing-carousel-button-next:hover {
+  right: -15px;
+  background: rgba(6, 27, 65, 0.4);
+}
+
+.listing-carousel-button.listing-carousel-button-prev:hover {
+  left: -15px;
+  background: rgba(6, 27, 65, 0.4);
+}
+
+.testi-item {
+  transition: all .3s ease-in-out;
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+
+.testimonials-text {
+  padding: 75px 50px 75px;
+  overflow: hidden;
+  background: #f5f6fa;
+  border: 1ps solid #f1f1f1;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.testimonials-text-after {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #ccc;
+  opacity: .3;
+  font-size: 35px;
+  transition: all 400ms linear;
+  bottom: 25px;
+  right: 30px;
+}
+
+.testimonials-text-before {
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  color: #ccc;
+  opacity: .3;
+  font-size: 35px;
+  transition: all 400ms linear;
+  top: 25px;
+  left: 30px;
+}
+
+.testimonials-text .listing-rating {
+  float: none;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.listing-rating i {
+  color: #206522;
+}
+
+.testimonials-avatar h3 {
+  font-weight: 600;
+  color: #206522;
+  font-size: 18px;
+}
+
+.testimonials-avatar h4 {
+  font-weight: 400;
+  font-size: 12px;
+  padding-top: 6px;
+  color: #206522;
+}
+
+.testimonials-carousel .swiper-slide {
+  padding: 30px 0;
+}
+
+.testi-avatar {
+  position: absolute;
+  left: 50%;
+  top: -30px;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
+  z-index: 20;
+}
+
+.testi-avatar img {
+  width: 90px;
+  height: 90px;
+  float: left;
+  border-radius: 100%;
+  border: 6px solid #fff;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.1);
+}
+
+.swiper-slide-active .testimonials-text {
+  background: #fff;
+  box-shadow: 0 9px 26px rgba(58, 87, 135, 0.1);
+}
+
+.testimonials-text p {
+  color: #878c9f;
+  font-size: 14px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  line-height: 24px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+.text-link {
+  position: absolute;
+  bottom: 0;
+  padding: 15px 0;
+  border-radius: 10px 10px 0 0;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.03);
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+
+.swiper-slide-active .testi-item {
+  opacity: 1;
+  transform: scale(1.0);
+}
+
+.tc-pagination {
+  float: left;
+  margin-top: 10px;
+  width: 100% !important;
+}
+
+.tc-pagination_wrap {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+}
+
+.tc-pagination2 {
+  float: none;
+  display: inline-block;
+  padding: 14px 0;
+  background: #fff;
+  border-radius: 30px;
+  min-width: 250px;
+  border-bottom: 0;
+}
+
+.tc-pagination .swiper-pagination-bullet,
+.tc-pagination2.swiper-pagination-bullet {
+  opacity: 1;
+  background:#335b34;
+  margin: 0 2px;
+  width: 10px;
+  height: 10px;
+  transition: all 300ms ease-in-out;
+}
+
+                            /***********************   Ends TESTIMONIAL AND REVIEW CSS ************************/
+
+
+
+
+
+
+
+
+
+
+                                     /***********************  Hotels secction ************************/
+                          
+                                     .container {
+                                      background-color: #f2f3f3;
+                                      position: relative;
+                                      /* Required for positioning the pseudo-element */
+                                      text-align: center;
+                                      
+                                      padding: 60px;
+                                      overflow: hidden;
+                                      /* Ensures the pseudo-element doesn't overflow */
+                                    }
+                                    
+                                    .container::before {
+                                      content: "";
+                                      /* Creates an empty pseudo-element */
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      right: 0;
+                                      bottom: 0;
+                                      background-image: url(background\ 2.png);
+                                      /* Replace with your background image path */
+                                      background-size: cover;
+                                      /* Adjust as needed */
+                                      background-position: center;
+                                      background-repeat: no-repeat;
+                                    
+                                      z-index: 0;
+                                      /* Places the background behind other content */
+                                    }
+                                    
+                                    .container>* {
+                                      position: relative;
+                                      /* Ensures content appears above the blurred background */
+                                      z-index: 1;
+                                      /* Keeps the content above the pseudo-element */
+                                    }
+
+
+
+
+
+
+
+
+
+/* Card Item Styles */
+.card-list .card-item {
+  height: auto;
+  user-select: none;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background:#3c7f3e;
+  border:  2px solid #060606;
+  transition: all 0.3s ease;
+}
+
+.card-list .card-item .user-image {
+  height: 350px;
+  border-radius: 20%;
+  margin-bottom: 20px;
+  padding: 4px;
+  transition: all 0.3s ease;
+}
+
+.card-list .card-item .user-name {
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.card-list .card-item .user-profession {
+  font-size: 16px;
+  color: #e3e3e3;
+  font-weight: 500;
+  margin: 14px 0 40px;
+  transition: all 0.3s ease;
+}
+
+/* Slider Pagination and Buttons */
+.slider-wrapper .swiper-pagination-bullet {
+  background: #fff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+  color: #fff;
+  margin-top: -55px;
+  transition: 0.5s;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+  color: #999597;
+}
+
+/* Responsive Styles */
+
+/* For larger screens (Laptops) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+  .card-list .card-item .user-image {
+    height: 300px;
+  }
+  .card-list .card-item {
+    padding: 30px;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .card-list .card-item .user-image {
+    height: 250px;
+  }
+  .card-list .card-item {
+    padding: 25px;
+  }
+  .card-list .card-item .user-name {
+    font-size: 22px;
+  }
+  .card-list .card-item .user-profession {
+    font-size: 14px;
+  }
+  .slider-wrapper {
+    margin: 0 10px 40px;
+    padding: 0 20px;
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  .card-list .card-item .user-image {
+    height: 200px;
+  }
+  .card-list .card-item {
+    padding: 20px;
+  }
+  .card-list .card-item .user-name {
+    font-size: 20px;
+  }
+  .card-list .card-item .user-profession {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-list .card-item .user-image {
+    height: 180px;
+  }
+  .card-list .card-item {
+    padding: 15px;
+  }
+  .card-list .card-item .user-name {
+    font-size: 18px;
+  }
+  .card-list .card-item .user-profession {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+.hotles {
+
+  box-shadow: 5px 5px 5px #0000009c;
+  color: #014b1e;
+  /* Dark green color for the heading */
+  font-family: serif;
+  font-size: 30px;
+  /* Font size */
+  margin: 0 auto;
+  /* Center the heading by setting left/right margins to auto */
+  background-color: #d0e8c6;
+  /* Light green background */
+  padding: 10px 20px;
+  /* Padding for the heading box */
+  border-radius: 10px;
+  /* Rounded corners */
+  text-align: center;
+  /* Centers text inside the box */
+  border: 1px solid #4CAF50;
+  /* Dark green border with thinner width */
+  width: fit-content;
+  /* Make the width fit the content */
+  max-width: 90%;
+  /* Optional: limits the width for larger screens */
+  margin-bottom: 3%;
+ 
+  font-weight: bold;
+}
+
+
+
+/* Responsive styles for the Domistic heading */
+@media (max-width: 1100px) {
+  .hotles {
+      font-size: 25px; /* Adjust the font size for medium screens */
+      
+  }
+}
+
+@media (max-width: 900px) {
+  .hotles {
+      font-size: 25px; /* Adjust for smaller screens like tablets */
+      
+  }
+}
+
+@media (max-width: 600px) {
+  .hotles {
+      font-size: 25px; /* Adjust for mobile screens */
+      
+  }
+}
+
+@media (max-width: 400px) {
+  .hotles {
+      font-size: 18px; /* Further adjustments for very small screens */
+      
+  }
+
+  
+}
+
+/* Swiper Button Styling */
+.slider-wrapper .swiper-slide-button {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 30px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3e6b40;
+  font-size: 18px;
+  margin-top: -55px;
+  transition: background-color 0.3s ease;
+}
+
+/* Targeting Swiper's default arrow icons */
+.slider-wrapper .swiper-button-prev::after,
+.slider-wrapper .swiper-button-next::after {
+  font-size: 20px;  /* Set to your desired arrow size */
+  font-weight: 900;
+}
+
+/* Add hover effect */
+.slider-wrapper .swiper-slide-button:hover {
+  background-color: #388e3c;
+  color: #ffffff;
+}
+
+/* Align Buttons */
+.slider-wrapper .swiper-button-prev {
+  left: 10px;
+}
+
+.slider-wrapper .swiper-button-next {
+  right: 10px;
+}
+
+
+
+
+
+
+
+
+                     /***********************  Hotels secction Ends ************************/     
+
+
+
+
+
+                            /***********************  WHATSAPP RIGHT BOTTOM LOGO************************/
+
+
+                            /* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-icon {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+
+                           /*Ends WhatsApp Floating Button */
+
+                           
+
+
+
+
+
+                                                    /*2 card slider  */
+
+
+
+
+
+.domistic-heading2 {
+  
+  font-size: 33px;
+  margin-top: -1212px;
+  font-family: serif;
+  color: #055222;
+  text-align: center;
+  
+}
+
+
+
+@media (max-width: 1100px) {
+  .domistic-heading2 {
+      font-size: 25px; /* Adjust the font size for medium screens */
+      
+  }
+}
+
+@media (max-width: 900px) {
+  .domistic-heading2 {
+      font-size: 25px; /* Adjust for smaller screens like tablets */
+      
+  }
+}
+
+@media (max-width: 600px) {
+  .domistic-heading2 {
+      font-size: 25px; /* Adjust for mobile screens */
+      
+  }
+}
+
+@media (max-width: 400px) {
+  .domistic-heading2{
+      font-size: 25px; /* Further adjustments for very small screens */
+      
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Optional: Add some margin adjustments to make the layout cleaner */
+.explore-slider-container {
+  margin-top: 0; /* Adjust this as needed */
+}
+
+
+
+.explore-container2 {
+ 
+	height: -100px;
+	display: grid;
+	place-items: center;
+  margin-bottom: -90px;
+  
+}
+
+.explore-slider-container2 {
+  margin-top: -1500px;
+	height: 615px;
+	width: 99vw;
+	max-width: 1680px;
+	position: relative;
+	overflow: hidden;
+	padding: 20px;
+}
+
+
+
+
+/* Styling for slider button container (rectangular box) */
+.explore-slider-container2 .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px; /* Height of the rectangular box */
+  width: 60px; /* Width of the rectangular box */
+  background-color: #257528; /* Green background */
+  border-radius: 10px; /* Slight rounding for rectangle corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure it's above the slider content */
+}
+
+/* Styling for slider button container (rectangular box) */
+.explore-slider-container2 .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 63px; /* Height of the rectangular box */
+  width: 40px; /* Width of the rectangular box */
+  background-color: #257528; /* Green background */
+  border-radius: 10px; /* Slight rounding for rectangle corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure it's above the slider content */
+}
+
+/* Styling the arrow inside the button */
+.explore-slider-container2 .btn::before {
+  content: "";
+  display: block;
+  width: 12px; /* Arrow width */
+  height: 12px; /* Arrow height */
+  border-right: 3px solid white; /* White arrow line */
+  border-bottom: 3px solid white; /* White arrow line */
+}
+
+/* Positioning the left button */
+.explore-slider-container2 .btn:first-of-type::before {
+  transform: rotate(138deg); /* Point arrow to the left */
+}
+
+/* Positioning the right button */
+.explore-slider-container2 .btn:last-of-type::before {
+  transform: rotate(313deg); /* Point arrow to the right */
+}
+
+/* Positioning the left button container */
+.explore-slider-container2 .btn:first-of-type {
+  left: 20px; /* Adjust the position */
+}
+
+/* Positioning the right button container */
+.explore-slider-container2 .btn:last-of-type {
+  right: 20px; /* Adjust the position */
+}
+
+/* Hover effect for the button */
+.explore-slider-container2 .btn:hover {
+  background-color: #1f6c24; /* Darker green on hover */
+  transform: scale(1.05) translateY(-50%); /* Slightly grow the button */
+}
+
+
+.explore-slider2 {
+	display: flex;
+	width: 1000%;
+	height: 100%;
+	transition: all .5s;
+}
+
+.explore-slider2 .slide {
+	height: 82%;
+	margin: auto 10px;
+	background-color:#dae8d7;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 2px #b3b0b0, -2px -2px 4px 2px white;
+	display: grid;
+	place-items: center;
+}
+
+.explore-slider2 .slide img {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.explore-slider2 .slide h2,
+.explore-slider2 .slide p,
+.explore-slider2 .slide h4 {
+	text-align: center;
+	color: white;
+}
+
+.explore-slider2 .slide span {
+	color: white;
+	font-size: 60px;
+}
+
+@media only screen and (min-width: 1100px) {
+	.explore-slider2 .slide {
+		width: calc(2.5% - 20px);
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.explore-slider2 .slide {
+		width: calc(3.3333333% - 20px);
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.explore-slider2 .slide {
+		width: calc(5% - 20px);
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.explore-slider2 .slide {
+		width: calc(10% - 20px);
+	}
+}
+
+/* Styling for the image */
+.explore-slider2 .slide img {
+    margin-top: -15px;
+    width: 100%; 
+    height: 190px; 
+    object-fit: cover; 
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Styling for the h2 (Hunza Valley) */
+.explore-slider2 .slide h2 {
+    font-size: 30px;
+    font-family: serif;
+    margin: 20px 0;
+    color: #055222;
+    position: relative; 
+}
+
+
+/* Styling for the price (10 Days) */
+.explore-slider2 .slide .price {
+	font-weight: bold;
+    color: #055222;
+    margin-top: -40px;
+    margin-left: -10px;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the h4 (content) */
+.explore-slider2 .slide h4 {
+    margin-bottom: -23px;
+    font-size: 1em;
+    margin-top: -13px;
+    color: #055222;
+    line-height: 1.2;
+    width: 84%;
+    text-align: center;
+    position: relative; 
+}
+
+
+/* Styling for the unique Book Now button */
+.explore-slider2 .slide .unique-book-now {
+    background-color: #257528;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	font-family: serif;
+	margin-bottom: 10px;
+}
+
+/* Styling for the h2 (Hunza Valley) */
+.explore-slider2 .slide h2 {
+  font-size: 30px;
+  font-family: serif;
+  margin: 20px 0;
+  color: #055222;
+  position: relative;
+  display: inline-block;
+}
+
+/* Adding a line under the h2 text */
+.explore-slider2 .slide h2::after {
+  content: "";
+  display: block;
+  width: 106%;
+  height: 3px;
+  background-color: #055222;
+  margin: 10px auto 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                       /*1 card slider  */
+
+
+
+
+
+
+
+
+
+.domistic-heading {
+  margin-top: -550px;
+  font-size: 33px;
+  font-family: serif;
+  color: #055222;
+  text-align: center;
+  
+}
+
+
+
+
+@media (max-width: 1100px) {
+  .domistic-heading {
+      font-size: 25px; /* Adjust the font size for medium screens */
+      
+  }
+}
+
+@media (max-width: 900px) {
+  .domistic-heading {
+      font-size: 25px; /* Adjust for smaller screens like tablets */
+      
+  }
+}
+
+@media (max-width: 600px) {
+  .domistic-heading {
+      font-size: 25px; /* Adjust for mobile screens */
+      
+  }
+}
+
+@media (max-width: 400px) {
+  .domistic-heading{
+      font-size: 25px; /* Further adjustments for very small screens */
+      
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Optional: Add some margin adjustments to make the layout cleaner */
+.explore-slider-container {
+  margin-top: 0; /* Adjust this as needed */
+}
+
+
+.explore-container {
+ 
+	height: 900px;
+	display: grid;
+	place-items: center;
+  margin-bottom: 100px;
+  
+}
+
+.explore-slider-container {
+  margin-top: -850px;
+	height: 615px;
+	width: 99vw;
+	max-width: 1680px;
+	position: relative;
+	overflow: hidden;
+	padding: 20px;
+}
+
+/* Styling for slider button container (rectangular box) */
+.explore-slider-container .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px; /* Height of the rectangular box */
+  width: 60px; /* Width of the rectangular box */
+  background-color: #257528; /* Green background */
+  border-radius: 10px; /* Slight rounding for rectangle corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure it's above the slider content */
+}
+
+/* Styling for slider button container (rectangular box) */
+.explore-slider-container .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 63px; /* Height of the rectangular box */
+  width: 40px; /* Width of the rectangular box */
+  background-color: #257528; /* Green background */
+  border-radius: 10px; /* Slight rounding for rectangle corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure it's above the slider content */
+}
+
+/* Styling the arrow inside the button */
+.explore-slider-container .btn::before {
+  content: "";
+  display: block;
+  width: 12px; /* Arrow width */
+  height: 12px; /* Arrow height */
+  border-right: 3px solid white; /* White arrow line */
+  border-bottom: 3px solid white; /* White arrow line */
+}
+
+/* Positioning the left button */
+.explore-slider-container .btn:first-of-type::before {
+  transform: rotate(138deg); /* Point arrow to the left */
+}
+
+/* Positioning the right button */
+.explore-slider-container .btn:last-of-type::before {
+  transform: rotate(313deg); /* Point arrow to the right */
+}
+
+/* Positioning the left button container */
+.explore-slider-container .btn:first-of-type {
+  left: 20px; /* Adjust the position */
+}
+
+/* Positioning the right button container */
+.explore-slider-container .btn:last-of-type {
+  right: 20px; /* Adjust the position */
+}
+
+/* Hover effect for the button */
+.explore-slider-container .btn:hover {
+  background-color: #1f6c24; /* Darker green on hover */
+  transform: scale(1.05) translateY(-50%); /* Slightly grow the button */
+}
+
+
+.explore-slider {
+	display: flex;
+	width: 1000%;
+	height: 100%;
+	transition: all .5s;
+}
+
+.explore-slider .slide {
+	height: 82%;
+	margin: auto 10px;
+	background-color:#dae8d7;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px 2px #b3b0b0, -2px -2px 4px 2px white;
+	display: grid;
+	place-items: center;
+}
+
+.explore-slider .slide img {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.explore-slider .slide h2,
+.explore-slider .slide p,
+.explore-slider .slide h4 {
+	text-align: center;
+	color: white;
+}
+
+.explore-slider .slide span {
+	color: white;
+	font-size: 60px;
+}
+
+@media only screen and (min-width: 1100px) {
+	.explore-slider .slide {
+		width: calc(2.5% - 20px);
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.explore-slider .slide {
+		width: calc(3.3333333% - 20px);
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.explore-slider .slide {
+		width: calc(5% - 20px);
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.explore-slider .slide {
+		width: calc(10% - 20px);
+	}
+}
+
+/* Styling for the image */
+.explore-slider .slide img {
+    margin-top: -15px;
+    width: 100%; 
+    height: 190px; 
+    object-fit: cover; 
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Styling for the h2 (Hunza Valley) */
+.explore-slider .slide h2 {
+    font-size: 30px;
+    font-family: serif;
+    margin: 20px 0;
+    color: #055222;
+    position: relative; 
+}
+
+
+/* Styling for the price (10 Days) */
+.explore-slider .slide .price {
+	font-weight: bold;
+    color: #055222;
+    margin-top: -40px;
+    margin-left: -10px;
+	font-size: 16px;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the h4 (content) */
+.explore-slider .slide h4 {
+    margin-bottom: -23px;
+    font-size: 1em;
+    margin-top: -13px;
+    color: #055222;
+    line-height: 1.2;
+    width: 84%;
+    text-align: center;
+    position: relative; 
+}
+
+
+/* Styling for the unique Book Now button */
+.explore-slider .slide .unique-book-now {
+    background-color: #257528;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	font-family: serif;
+	margin-bottom: 10px;
+}
+
+/* Styling for the h2 (Hunza Valley) */
+.explore-slider .slide h2 {
+  font-size: 30px;
+  font-family: serif;
+  margin: 20px 0;
+  color: #055222;
+  position: relative;
+  display: inline-block;
+}
+
+/* Adding a line under the h2 text */
+.explore-slider .slide h2::after {
+  content: "";
+  display: block;
+  width: 106%;
+  height: 2px;
+  background-color: #055222;
+  margin: 10px auto 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

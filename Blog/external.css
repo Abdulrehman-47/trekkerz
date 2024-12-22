@@ -1,0 +1,1115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  
+    background-color: #f8f8f8;
+    overflow-x: clip;
+}
+
+
+
+
+
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: #fcfcfc;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 50%); /* Adds a subtle box shadow */
+}
+
+
+
+
+nav ul {
+  
+  display: flex;
+  margin-right: 100px;
+  margin-bottom: -2px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+
+
+nav ul li a.active {
+  color: #164727;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Change background color for "Customize Trip" */
+#customize-link {
+  background-color: #164727;
+  /* Add your desired color */
+  color: #ffffff;
+  /* Optional: Change text color */
+}
+
+#customize-link:hover {
+  background-color: #073513;
+  /* Change the hover color if needed */
+  color: white;
+  /* Optional: Keep the text color on hover */
+}
+
+
+/* CSS: FOR THE Under line animation in nav bar*/
+nav .menu-btn i {
+  margin-left: -36px;
+  color: #055222;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+
+
+nav ul li a {
+  color: #164727;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  position: relative;
+  /* Needed for the pseudo-element */
+  transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #164727;
+  /* Color of the underline */
+  transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  /* Full underline on hover */
+}
+
+
+
+/* END  CSS: FOR THE Under line animation in nav bar*/
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .menu-btn i {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 141px;
+    /* Adjusted to prevent overlap with the logo */
+    left: -111%;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When the checkbox is checked, show the menu */
+  #click:checked~ul {
+    left: -0px;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 22px;
+    /* Increased for mobile readability */
+    padding: 10px 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  /* When checked, reset the margin for animation */
+  #click:checked~ul li a {
+    margin-left: 0;
+  }
+
+  /* Mobile hover effects */
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* Larger mobile devices, slight adjustments */
+@media (max-width: 480px) {
+  nav .menu-btn i {
+    font-size: 21px;
+    /* Slightly smaller for very small screens */
+    margin-right: 19px;
+  }
+
+  nav ul {
+    top: 120px;
+    /* Adjusted for smaller screen heights */
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* Add this to your existing CSS */
+/* Between 921px and 1270px media query */
+@media (min-width: 921px) and (max-width: 1270px) {
+  nav {
+    padding: 0 20px;
+    /* Reduce padding to create more space */
+    justify-content: space-between;
+    /* Ensure the logo and menu items are spaced out evenly */
+  }
+
+  nav ul {
+    margin-right: 0;
+    /* Remove the large right margin to give more space */
+    flex-grow: 1;
+    /* Allow the ul to take up more space */
+    justify-content: flex-end;
+    /* Align the links to the right */
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    /* Allow the logo to take up its own space */
+    max-width: 30%;
+    /* Restrict the logo width to avoid overlap */
+  }
+
+  nav ul li {
+    margin: 0 10px;
+    /* Add consistent margin to prevent overflow */
+  }
+
+  nav ul li a {
+    padding: 6px 10px;
+    /* Slightly reduce padding to prevent wrapping */
+    font-size: 16px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+@media (max-width: 1400px) {
+  nav {
+    padding: 0 30px;
+    /* Reduce padding */
+
+  }
+
+
+
+  nav ul li a {
+
+    padding: 6px 10px;
+    /* Reduce padding around links */
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1005px) {
+  nav {
+    padding: 0 5px;
+    /* Reduce padding even more */
+    justify-content: space-between;
+  }
+
+  nav ul {
+    margin-right: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    max-width: 35%;
+    /* Reduce logo size further */
+  }
+
+  nav ul li {
+    margin: 0 3px;
+    /* Decrease margin between items */
+  }
+
+  nav ul li a {
+    padding: 4px 7px;
+    /* Reduce padding for links */
+    font-size: 14px;
+    /* Reduce font size for better fit */
+  }
+}
+
+
+@media (min-width: 1005px) and (max-width: 1500px) {
+  nav {
+    padding: 0 15px;
+    /* Adjust padding to create more space */
+    justify-content: space-between;
+    /* Ensure elements are spread evenly */
+  }
+
+  nav ul {
+
+    margin-right: 95px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    /* Ensure links align to the right */
+  }
+
+  nav .logo {
+    max-width: 30%;
+    /* Adjust logo size */
+    flex-grow: 1;
+    /* Make sure logo occupies its space */
+  }
+
+  nav ul li {
+    margin: 0 4px;
+    /* Slightly reduce space between menu items */
+  }
+
+  nav ul li a {
+    padding: 5px 9px;
+    /* Adjust padding to fit menu items */
+    font-size: 15px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+
+
+/* Cross button for the button */
+.close-btn {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #055222; /* Adjust color as needed */
+  font-size: 22px;
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Show close button on mobile */
+@media (max-width: 1000px) {
+  .close-btn {
+      display: block; /* Show the close button on mobile */
+  }
+}
+
+/* Adjust the positioning of the close button */
+@media (max-width: 1000px) {
+  .close-btn {
+      position: absolute;
+      top: 5px; /* Adjust as needed */
+      right: 6px; /* Adjust as needed */
+  }
+}
+
+/* Checkbox to control the menu visibility */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+/* When the checkbox is checked, hide the nav */
+input[type="checkbox"]:checked ~ ul {
+  left: -100%; /* Move the menu out of view */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      /* Style for dropdown container */
+/* Style for dropdown container */
+
+.dropdown {
+  position: relative;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
+}
+
+/* Style for dropdown links */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: #164727;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li a:hover {
+  background-color: #164727;
+  color: white;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown on hover */
+}
+
+/* Ensure dropdown menu aligns well for larger screens */
+@media (min-width: 1005px) {
+  .dropdown-content {
+    top: 100%;
+    left: 0;
+    max-height: none; /* Remove max-height for larger screens */
+    overflow: visible; /* Ensure all items are visible */
+  }
+}
+
+/* For smaller screens, ensure dropdown stays full width */
+@media (max-width: 1000px) {
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    max-height: 200px; /* Adjust as needed for mobile */
+    overflow-y: auto; /* Enable vertical scrolling on mobile */
+    z-index: 2000; /* Ensure it appears above other elements */
+  }
+
+  .dropdown-content li a {
+    padding: 12px;
+    font-size: 16px;
+    
+    background-color: #fff;
+  }
+
+  .dropdown-content li a:hover {
+    background-color: #164727;
+  }
+}
+
+
+
+
+                                          /* Styles for top contact section inside navbar */
+.top-contact {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 100px;
+
+  align-items: center;
+
+  color: rgb(15, 15, 15);
+  font-size: 14px;
+
+}
+
+.top-contact .contact-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-contact .contact-item i {
+  margin-right: 8px;
+}
+
+.top-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+/* Top Navbar */
+.top-nav {
+  width: 100%;
+  background-color: #e7f0ea;
+  /* Adjust the background color as needed */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+}
+
+.top-nav-content {
+  margin-left: -0px;
+  display: flex;
+  font-size: medium;
+  color: #164727;
+
+
+}
+
+.top-nav .contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.top-nav .contact-item i {
+  margin-right: 5px;
+}
+
+.top-nav a {
+  color: #164727;
+  text-decoration: none;
+}
+
+/* Main Navbar (your existing navbar) */
+
+
+
+
+
+/* Media Queries for Large Mobiles */
+@media (max-width: 768px) {
+  .top-nav {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .top-nav-content {
+    font-size: small;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 3px;
+  }
+
+
+
+  nav a {
+    font-size: small;
+  }
+}
+
+/* Media Queries for Small Mobiles */
+@media (max-width: 480px) {
+  .top-nav {
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .top-nav-content {
+    font-size: x-small;
+    margin-left: -40px;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 2px;
+  }
+
+
+
+  nav a {
+    font-size: x-small;
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-icon {
+  width: 67%;
+  height: 100%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+:root {
+  --faintBlue: rgb(84, 212, 212);
+}
+
+.navigation {
+  height: auto;
+  /* background-color: rgb(238, 29, 210); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0 .5rem;
+  padding-bottom: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: var(--faintBlue);
+  margin-top: auto;
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  position: relative;
+  /* background-color: rgb(245, 219, 219); */
+}
+
+.content-right {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  padding: 0.8rem;
+}
+
+.content-right img {
+  height: 20px;
+  border: 5px dashed #055222;
+  border-radius: 8%;
+}
+
+.navLeft {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.navLeft a {
+  text-decoration: none;
+  color: rgb(84, 212, 212);
+}
+
+.navCenter {
+  width: 300px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-items .nav-item {
+  list-style: none;
+}
+
+.nav-items .nav-item a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.15s ease-in;
+  border-radius: 5px;
+  padding: 0.3rem;
+  border: 1px solid white;
+}
+
+.nav-item a:hover {
+  border: 1px solid var(--faintBlue);
+  color: white;
+  background: var(--faintBlue);
+}
+
+.home-articles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.home-div-articles div h2 {
+  font-family: ui-serif;
+  font-size: 30px;
+  margin-top: 1rem; /* Add margin from the top */
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto; /* Center the element horizontally */
+  display: block; /* Ensure it's a block element for centering */
+  text-align: center; /* Center the text inside the box */
+  background-color: #d0e8c6; /* Set the background color to green */
+  padding: 1rem; /* Add some padding for spacing around the text */
+  color:#014b1e; /* Set the text color to white for contrast */
+  border-radius: 10px; /* Optional: rounded corners */
+  border: 1px solid #4CAF50;
+  width: fit-content; /* Makes the box size adjust to the content */
+}
+
+
+.home-article {
+  background-color: #dae8d7;
+  flex-direction: column;
+  padding: 1rem;
+  border: 2px solid #055222;
+  border-radius: 5px;
+  width: 380px;
+  margin: 1rem .5rem;
+}
+
+.home-article a img {
+  width: 350px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.article-info-div {
+  float: right;
+  margin-top: 1rem;
+}
+
+.home-article a {
+  text-decoration: none;
+  color: rgb(39, 39, 39);
+}
+
+/* Mobile Adjustments */
+@media only screen and (max-width: 800px) {
+  .navigation {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  .navigation div,
+  .navigation form {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .home-articles {
+    justify-content: center; /* Center the cards on mobile */
+    width: 100%; /* Ensure the container uses full width */
+  }
+
+  .home-article {
+    width: 90vw; /* Adjust width to ensure cards don’t stretch too far */
+    margin: 1rem; /* Adjust margin to avoid overlapping */
+  }
+
+  .home-article a img {
+    width: 80vw; /* Adjust image width for smaller screens */
+  }
+
+  .home-div-articles div .yearBox {
+    margin-right: .5rem;
+  }
+
+  .navigation div,
+  .navigation form {
+    text-align: center;
+  }
+
+  .content-left {
+    width: 100%;
+  }
+
+  .content-left {
+    font-size: 1rem;
+  }
+
+  .shareBtn {
+    margin: 0 !important;
+  }
+}
+
+
+
+
+.home-article .article-title-1 {
+  color: #055222; /* Example color */
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  font-family: ui-serif;
+  font-weight: bold;
+  border-bottom: 2px solid #055222; /* Add a line under the h3 */
+  padding-bottom: 5px; /* Adds spacing between text and the line */
+  display: inline-block; /* Makes the h3 behave like an inline element */
+  width: 85%; /* Adjust the length of the line (e.g., 50% of the parent container width) */
+}
+
+
+/* Repeat for other cards */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+                               /*********************** footer section ************************/
+
+
+/* General footer styles */
+footer {
+  background-color: #164727;
+  width: 100%;
+  /* Dark green background */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  /* Ensure consistent font */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin: 20px;
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for better layout */
+}
+
+.footer-section h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #ccc;
+  margin-bottom: 15px;
+  font-size: 18px;
+  /* Slightly larger font size for headings */
+}
+
+.latest-updates form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Space between input and button */
+}
+
+.latest-updates input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  /* Ensure input takes full width */
+  max-width: 300px;
+  /* Limit width for larger screens */
+}
+
+.latest-updates button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.latest-updates button:hover {
+  background-color: #45a049;
+  /* Slightly darker green on hover */
+}
+
+.more-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-info ul li {
+  margin: 10px 0;
+}
+
+.more-info ul li a {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  /* Slightly larger font size */
+}
+
+.more-info ul li a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.social-icons a {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  /* Larger icon size */
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+  /* Green color on hover */
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 14px;
+  /* Slightly smaller font size */
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  /* Underline .developer-credit {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #ffffff;
+  /* Set a neutral color for the text */
+  text-align: center;
+  /* Center the text */
+  margin-top: 20px;
+  /* Add some space above */
+}
+
+.developer-credit a {
+  color: #000000;
+  /* Set the link color */
+  text-decoration: none;
+  /* Remove the underline */
+  font-weight: bold;
+  /* Make the link bold */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.developer-credit a:hover {
+  color: #000000;
+  /* Change link color on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+
+.developer-credit {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.developer-credit a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.developer-credit a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+  /* Ensures the input fields take full width within their container */
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+
+.footer-bottom .info {
+  color: white;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*********************** footer section ************************/
+
+
+
+
+
+
+
+
+
+
+
+
+  

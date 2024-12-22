@@ -1,0 +1,1800 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  
+    background-color: #f8f8f8;
+    overflow-x: clip;
+}
+
+
+
+
+
+
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background: #fcfcfc;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 50%); /* Adds a subtle box shadow */
+}
+
+
+
+
+nav ul {
+  
+  display: flex;
+  margin-right: 100px;
+  margin-bottom: -2px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 5px;
+}
+
+
+
+nav ul li a.active {
+  color: #164727;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Change background color for "Customize Trip" */
+#customize-link {
+  background-color: #164727;
+  /* Add your desired color */
+  color: #ffffff;
+  /* Optional: Change text color */
+}
+
+#customize-link:hover {
+  background-color: #073513;
+  /* Change the hover color if needed */
+  color: white;
+  /* Optional: Keep the text color on hover */
+}
+
+
+/* CSS: FOR THE Under line animation in nav bar*/
+nav .menu-btn i {
+  margin-left: -36px;
+  color: #055222;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+
+
+nav ul li a {
+  color: #164727;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  position: relative;
+  /* Needed for the pseudo-element */
+  transition: all 0.3s ease;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #164727;
+  /* Color of the underline */
+  transition: width 0.4s ease-in-out;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+  /* Full underline on hover */
+}
+
+
+
+/* END  CSS: FOR THE Under line animation in nav bar*/
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 20px;
+  }
+
+  nav .menu-btn i {
+    display: block;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 141px;
+    /* Adjusted to prevent overlap with the logo */
+    left: -111%;
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* When the checkbox is checked, show the menu */
+  #click:checked~ul {
+    left: -0px;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 30px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 22px;
+    /* Increased for mobile readability */
+    padding: 10px 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  /* When checked, reset the margin for animation */
+  #click:checked~ul li a {
+    margin-left: 0;
+  }
+
+  /* Mobile hover effects */
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* Larger mobile devices, slight adjustments */
+@media (max-width: 480px) {
+  nav .menu-btn i {
+    font-size: 21px;
+    /* Slightly smaller for very small screens */
+    margin-right: 19px;
+  }
+
+  nav ul {
+    top: 120px;
+    /* Adjusted for smaller screen heights */
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+  }
+}
+
+/* Add this to your existing CSS */
+/* Between 921px and 1270px media query */
+@media (min-width: 921px) and (max-width: 1270px) {
+  nav {
+    padding: 0 20px;
+    /* Reduce padding to create more space */
+    justify-content: space-between;
+    /* Ensure the logo and menu items are spaced out evenly */
+  }
+
+  nav ul {
+    margin-right: 0;
+    /* Remove the large right margin to give more space */
+    flex-grow: 1;
+    /* Allow the ul to take up more space */
+    justify-content: flex-end;
+    /* Align the links to the right */
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    /* Allow the logo to take up its own space */
+    max-width: 30%;
+    /* Restrict the logo width to avoid overlap */
+  }
+
+  nav ul li {
+    margin: 0 10px;
+    /* Add consistent margin to prevent overflow */
+  }
+
+  nav ul li a {
+    padding: 6px 10px;
+    /* Slightly reduce padding to prevent wrapping */
+    font-size: 16px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+@media (max-width: 1400px) {
+  nav {
+    padding: 0 30px;
+    /* Reduce padding */
+
+  }
+
+
+
+  nav ul li a {
+
+    padding: 6px 10px;
+    /* Reduce padding around links */
+  }
+}
+
+@media (min-width: 921px) and (max-width: 1005px) {
+  nav {
+    padding: 0 5px;
+    /* Reduce padding even more */
+    justify-content: space-between;
+  }
+
+  nav ul {
+    margin-right: 0;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  nav .logo {
+    flex-grow: 1;
+    max-width: 35%;
+    /* Reduce logo size further */
+  }
+
+  nav ul li {
+    margin: 0 3px;
+    /* Decrease margin between items */
+  }
+
+  nav ul li a {
+    padding: 4px 7px;
+    /* Reduce padding for links */
+    font-size: 14px;
+    /* Reduce font size for better fit */
+  }
+}
+
+
+@media (min-width: 1005px) and (max-width: 1500px) {
+  nav {
+    padding: 0 15px;
+    /* Adjust padding to create more space */
+    justify-content: space-between;
+    /* Ensure elements are spread evenly */
+  }
+
+  nav ul {
+
+    margin-right: 95px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    /* Ensure links align to the right */
+  }
+
+  nav .logo {
+    max-width: 30%;
+    /* Adjust logo size */
+    flex-grow: 1;
+    /* Make sure logo occupies its space */
+  }
+
+  nav ul li {
+    margin: 0 4px;
+    /* Slightly reduce space between menu items */
+  }
+
+  nav ul li a {
+    padding: 5px 9px;
+    /* Adjust padding to fit menu items */
+    font-size: 15px;
+    /* Slightly reduce font size */
+  }
+}
+
+
+
+
+
+
+/* Cross button for the button */
+.close-btn {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #055222; /* Adjust color as needed */
+  font-size: 22px;
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Show close button on mobile */
+@media (max-width: 1000px) {
+  .close-btn {
+      display: block; /* Show the close button on mobile */
+  }
+}
+
+/* Adjust the positioning of the close button */
+@media (max-width: 1000px) {
+  .close-btn {
+      position: absolute;
+      top: 5px; /* Adjust as needed */
+      right: 6px; /* Adjust as needed */
+  }
+}
+
+/* Checkbox to control the menu visibility */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+/* When the checkbox is checked, hide the nav */
+input[type="checkbox"]:checked ~ ul {
+  left: -100%; /* Move the menu out of view */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                      /* Style for dropdown container */
+/* Style for dropdown container */
+
+.dropdown {
+  position: relative;
+}
+
+/* Style for the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fcfcfc;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  min-width: 200px;
+}
+
+/* Style for dropdown links */
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: #164727;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-content li a:hover {
+  background-color: #164727;
+  color: white;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block; /* Show the dropdown on hover */
+}
+
+/* Ensure dropdown menu aligns well for larger screens */
+@media (min-width: 1005px) {
+  .dropdown-content {
+    top: 100%;
+    left: 0;
+    max-height: none; /* Remove max-height for larger screens */
+    overflow: visible; /* Ensure all items are visible */
+  }
+}
+
+/* For smaller screens, ensure dropdown stays full width */
+@media (max-width: 1000px) {
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    max-height: 200px; /* Adjust as needed for mobile */
+    overflow-y: auto; /* Enable vertical scrolling on mobile */
+    z-index: 2000; /* Ensure it appears above other elements */
+  }
+
+  .dropdown-content li a {
+    padding: 12px;
+    font-size: 16px;
+    
+    background-color: #fff;
+  }
+
+  .dropdown-content li a:hover {
+    background-color: #164727;
+  }
+}
+
+
+
+
+                                          /* Styles for top contact section inside navbar */
+.top-contact {
+  display: flex;
+  margin-bottom: 100px;
+  margin-left: 100px;
+
+  align-items: center;
+
+  color: rgb(15, 15, 15);
+  font-size: 14px;
+
+}
+
+.top-contact .contact-item {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-contact .contact-item i {
+  margin-right: 8px;
+}
+
+.top-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+/* Top Navbar */
+.top-nav {
+  width: 100%;
+  background-color: #e7f0ea;
+  /* Adjust the background color as needed */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+}
+
+.top-nav-content {
+  margin-left: -0px;
+  display: flex;
+  font-size: medium;
+  color: #164727;
+
+
+}
+
+.top-nav .contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.top-nav .contact-item i {
+  margin-right: 5px;
+}
+
+.top-nav a {
+  color: #164727;
+  text-decoration: none;
+}
+
+/* Main Navbar (your existing navbar) */
+
+
+
+
+
+/* Media Queries for Large Mobiles */
+@media (max-width: 768px) {
+  .top-nav {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .top-nav-content {
+    font-size: small;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 3px;
+  }
+
+
+
+  nav a {
+    font-size: small;
+  }
+}
+
+/* Media Queries for Small Mobiles */
+@media (max-width: 480px) {
+  .top-nav {
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .top-nav-content {
+    font-size: x-small;
+    margin-left: -40px;
+  }
+
+  .top-nav .contact-item {
+    margin: 0 2px;
+  }
+
+
+
+  nav a {
+    font-size: x-small;
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+}
+
+.whatsapp-float:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-icon {
+  width: 67%;
+  height: 100%;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tour-packages {
+    text-align: center;
+    
+    padding: 60px;
+}
+.carousel-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 10px; /* Space between images */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  width: 100%;
+  max-width: 900px; /* Maximum width for the visible area */
+  overflow-x: auto; /* Allow horizontal scroll */
+}
+
+.carousel img {
+  width: 30%; /* Show three images in medium size */
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+
+
+.package-options {
+    margin-bottom: 20px;
+}
+
+.package-btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 2px solid #006400;
+    color: black;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.package-btn:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.package-details {
+    margin-top: 20px;
+}
+
+.main-package-btn {
+  display: block; /* Ensures the button takes up its space */
+  margin: 0 auto 3rem auto; /* Center horizontally using auto and adjust bottom margin */
+  background-color: #28a745; /* Green background */
+  color: white; /* White text */
+  font-size: 18px; /* Font size for the text */
+  font-weight: bold; /* Bold text */
+  padding: 15px 30px; /* Padding for a larger, clickable button */
+  border: none; /* Remove default button borders */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-transform: uppercase; /* Make text uppercase */
+  letter-spacing: 1px; /* Slightly increase spacing between letters */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
+}
+
+.main-package-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.main-package-btn:active {
+  background-color: #1e7e34; /* Even darker green on click */
+  transform: translateY(0); /* Remove lift on click */
+}
+
+/* Medium screens (Tablets, 768px - 992px) */
+@media (max-width: 992px) {
+.main-package-btn {
+    font-size: 16px; /* Slightly smaller text */
+    padding: 12px 25px; /* Adjust padding */
+    margin: 0 auto 2rem auto;
+}
+}
+
+/* Small screens (Mobile, 576px - 767px) */
+@media (max-width: 767px) {
+.main-package-btn {
+    font-size: 14px; /* Smaller text for mobile */
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+    margin: 0 auto 1.5rem auto;
+}
+}
+
+/* Extra small screens (Phones, up to 575px) */
+@media (max-width: 575px) {
+.main-package-btn {
+    font-size: 12px; /* Even smaller text */
+    padding: 8px 15px; /* Reduced padding */
+    margin: 0 auto 1rem auto;
+}
+}
+
+
+
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Start at original position */
+    }
+    50% {
+        transform: translateY(-10px); /* Float up 10px */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+    }
+}
+
+.info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 5rem;
+}
+
+.info-item {
+    text-align: center;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 20px rgba(0, 100, 0, 0.8); /* Stronger and larger dark green shadow */
+    animation: fadeInScale 0.8s ease-in-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.icon {
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.tour-highlights-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-between; /* Spread items out */
+  gap: 2rem; /* Even gap between items */
+  margin: 2rem 0;
+  padding: 2rem; /* Increased padding for more spacing */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for a layered effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow on hover */
+}
+
+.tour-highlights-container:hover {
+  transform: scale(1.03); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Increase shadow on hover for more depth */
+}
+
+.highlights {
+  flex: 1;
+  min-width: 320px; /* Adjusted for better spacing */
+  max-width: 45%; /* Max width for better layout on larger screens */
+  background-color: white; /* White background for highlights */
+  padding: 1.5rem; /* Internal padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for each highlight */
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects for hover */
+}
+
+.highlights:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Deepen shadow on hover */
+}
+
+.highlights h2 {
+  font-size: 2rem; /* Slightly larger title */
+  font-weight: 600;
+  margin-bottom: 2rem; /* Adjusted margin for better spacing */
+  color: #28a745; /* Emphasize the title with color */
+  text-align: center; /* Center-align the title */
+  letter-spacing: 1px; /* Add spacing between letters */
+  text-transform: uppercase; /* Make the title uppercase */
+}
+
+.highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlights li {
+  font-size: 1.1rem; /* Slightly increased font size */
+  margin-bottom: 1rem; /* Larger margin between items */
+  color: #555; /* Softer text color */
+  line-height: 1.5; /* Increase line height for readability */
+}
+
+.highlights li strong {
+  font-weight: 700; /* Bolder emphasis */
+  color: #333; /* Darker for contrast */
+}
+
+/* Fade-in effect for highlights */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Media queries for better responsiveness */
+
+/* For medium screens (tablets and smaller desktops) */
+@media (max-width: 992px) {
+  .highlights {
+      max-width: 100%; /* Make highlights take full width */
+      margin-bottom: 2rem; /* Add spacing between rows */
+  }
+}
+
+/* For small screens (phones) */
+@media (max-width: 576px) {
+  .tour-highlights-container {
+      padding: 1rem; /* Reduce padding for small screens */
+  }
+
+  .highlights h2 {
+      font-size: 1.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .highlights {
+      padding: 1rem; /* Less padding on small devices */
+      min-width: 100%; /* Full width for small screens */
+  }
+}
+
+  
+  .details {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-width: 300px;
+  }
+  
+  .detail-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(76, 175, 80, 0.5); /* Green border shadow */
+    width: calc(50% - 1rem);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transition */
+  }
+  
+  .detail-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 0 6px rgba(76, 175, 80, 0.7); /* Deeper shadow on hover with green */
+  }
+  
+  .icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .info {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .tour-highlights-container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .details {
+      gap: 1.5rem;
+    }
+  
+    .detail-box {
+      width: 100%;
+    }
+  }
+  
+  /* Keyframes for fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End at original position */
+    }
+  }
+/*<!--tours highlight-->*/
+
+/* General Styling for the Desktop Version (unchanged) */
+.tour-plan-container {
+  width: 90%;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.days-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 10px;
+}
+
+.day {
+  margin-bottom: 10px;
+  opacity: 0; /* Initially invisible */
+  animation: fadeIn 0.8s ease-in-out forwards; /* Fade-in effect */
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #28a745; /* Green background color */
+  color: white;
+  padding: 20px 40px; /* Vertical and horizontal padding */
+  font-size: 32px; /* Increase font size for day headers */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
+  animation: slideIn 0.5s ease-out; /* Slide-in effect */
+  width: 100%; /* Set width to full */
+  max-width: 800px; /* Set a max width for larger screens */
+  margin: 0 auto; /* Center the header horizontally */
+}
+
+
+.day-header:hover {
+  background-color: #218838; /* Darker green background color */
+  transform: scale(1.02); /* Slightly scale up on hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out; /* Smooth rotation transition */
+}
+
+.day-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.day-content p {
+  margin: 0;
+}
+
+.show .day-content {
+  max-height: 500px; /* Expanded height */
+  padding: 15px;
+  opacity: 1;
+}
+
+.show .arrow {
+  transform: rotate(180deg); /* Arrow flips when expanded */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media Queries for Mobile Version */
+@media (max-width: 768px) {
+  .tour-plan-container {
+      width: 95%; /* Slightly narrower for mobile */
+  }
+
+  .days-row {
+      grid-template-columns: 1fr; /* Single column layout */
+      gap: 15px; /* Increase gap between items */
+  }
+
+  .day-header {
+      padding: 12px; /* Reduce padding for better fit */
+      font-size: 16px; /* Slightly smaller font size */
+  }
+
+  .arrow {
+      font-size: 20px; /* Adjust arrow size for smaller screens */
+  }
+
+  .day-content {
+      padding: 10px; /* Adjust content padding */
+  }
+
+  .day:hover {
+      transform: none; /* Disable hover effect on mobile */
+      box-shadow: none; /* Simplify box shadow on mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .day-header {
+      padding: 10px; /* Further reduce padding */
+      font-size: 1rem; /* Smaller font size for narrow screens */
+  }
+
+  .days-row {
+      gap: 20px; /* More space between items for better touch interaction */
+  }
+
+  .day {
+      margin-bottom: 1.5rem; /* Increase space between days */
+  }
+
+  h2 {
+      font-size: 20px; /* Slightly smaller heading for small screens */
+  }
+}
+
+
+/*   <!--tours plan--> */
+
+/* General Section Styling */
+section {
+    background-color: #f7fafc; /* Light Gray */
+    padding: 2rem 0; /* Padding for top and bottom */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for the entire section */
+  }
+  
+  section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #2d3748; /* Dark Gray */
+    margin-bottom: 2rem;
+    animation: slideDown 1.2s ease-out; /* Heading slide-in from top */
+  }
+  
+  /* Package Cards */
+  .package-card {
+    background-color: #e6f7e6; /* Light green background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slide up */
+    animation: cardFadeIn 1.3s forwards ease-in-out; /* Animation for card fade-in */
+  }
+  
+  .package-card:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-5px); /* Small lift effect */
+  }
+  
+  /* Text Styling */
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #38a169; /* Green color for the cost */
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #4a5568; /* Dark Gray for text */
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #4a5568; /* Text color */
+  }
+  
+  ul li {
+    margin-bottom: 0.5rem; /* Spacing between list items */
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .package-card {
+      padding: 2rem;
+    }
+  
+    h2 {
+      font-size: 3rem;
+    }
+  
+    h3 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes cardFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/*
+<!--INCLUDED EXCLUDED-->8 
+*/
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%; /* Adjusted width for better alignment */
+}
+
+.box {
+    width: 30%; /* Adjusted width for proper spacing */
+    padding: 40px; /* Reduced padding for better fit */
+    border: 1px solid black;
+    font-size: 14px;
+    margin: 0; /* Removed margin */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+  
+    margin-bottom: 2rem;
+}
+
+/* Remove margin between the boxes */
+.box:not(:last-child) {
+    margin-right: 20px; /* Space between boxes */
+}
+
+.box h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adjusted margin-bottom */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    line-height: 1.6; /* Adjusted line-height for better readability */
+}
+
+
+
+/* Media Query for Tablets and Smaller Desktops */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .box {
+        width: 45%; /* Adjust width for better fit */
+        padding: 30px; /* Adjust padding */
+    }
+
+    .box:not(:last-child) {
+        margin-right: 15px; /* Adjust space between boxes */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width for mobile screens */
+        flex-direction: column; /* Stack boxes vertically */
+        align-items: center; /* Center align boxes */
+    }
+
+    .box {
+        width: 90%; /* Full width with some padding */
+        padding: 20px; /* Adjust padding for mobile */
+        margin-bottom: 20px; /* Add margin-bottom for spacing between stacked boxes */
+    }
+
+    .box:not(:last-child) {
+        margin-right: 0; /* No margin-right for stacked boxes */
+    }
+}
+
+
+
+/* Media Query for Tablets and Smaller Desktops */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        padding-top: 3rem; /* Adjust padding */
+        padding-bottom: 3rem; /* Adjust padding */
+    }
+
+    .image-container {
+        margin-top: 15px; /* Adjust margin for smaller screens */
+        padding-bottom: 2rem; /* Adjust padding */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px; /* Smaller font size for mobile */
+        padding-top: 2rem; /* Adjust padding */
+        padding-bottom: 2rem; /* Adjust padding */
+    }
+
+    .image-container {
+        margin-top: 10px; /* Adjust margin for mobile screens */
+        padding-bottom: 1rem; /* Adjust padding */
+    }
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and devices with a max width of 768px */
+@media (max-width: 768px) {
+    .days-row {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 15px; /* Slightly increased gap for better spacing */
+    }
+
+    h2 {
+        font-size: 20px; /* Smaller heading size */
+        margin-bottom: 20px; /* Enough space for readability */
+    }
+
+    .day-header {
+        font-size: 18px; /* Make text more readable on smaller devices */
+        padding: 12px 15px; /* Adjust padding for a better fit */
+    }
+
+    .arrow {
+        font-size: 20px; /* Reduced arrow size */
+    }
+
+    .day-content {
+        padding: 10px 15px; /* Consistent padding for content */
+    }
+
+    .show .day-content {
+        max-height: 350px; /* Adjusted content height for mobile */
+    }
+}
+
+/* For mobile devices with a max width of 480px */
+@media (max-width: 480px) {
+    .tour-plan-container {
+        width: 95%; /* Reduced width with margin for better mobile view */
+        padding: 0 5px; /* Smaller padding */
+    }
+
+    h2 {
+        font-size: 18px; /* Smaller, compact heading */
+        margin-bottom: 15px; /* Adjusted space below heading */
+    }
+
+    .day-header {
+        font-size: 16px; /* Slightly smaller for better mobile fit */
+        padding: 10px 12px; /* Reduce padding for compact look */
+    }
+
+    .arrow {
+        font-size: 18px; /* Adjust arrow size to match text */
+    }
+
+    .day-content {
+        padding: 8px 10px; /* Reduced padding for content on mobile */
+        border-radius: 5px; /* Slightly smaller border-radius */
+    }
+
+    .show .day-content {
+        max-height: 300px; /* Limit the expanded content height */
+    }
+}
+
+
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and devices with a max width of 768px */
+@media (max-width: 768px) {
+    .info-grid {
+        flex-direction: column; /* Stack items vertically */
+        gap: 30px; /* Reduce gap between items */
+        padding-bottom: 3rem; /* Reduce padding for smaller devices */
+    }
+
+    .info-item {
+        padding: 15px; /* Reduce padding for a more compact layout */
+        box-shadow: 0 6px 15px rgba(0, 100, 0, 0.7); /* Slightly smaller shadow */
+    }
+
+    .icon {
+        font-size: 1.8rem; /* Slightly smaller icon size */
+    }
+
+    p {
+        font-size: 0.9rem; /* Reduce font size for better readability on smaller screens */
+    }
+}
+
+/* For mobile devices with a max width of 480px */
+@media (max-width: 480px) {
+    .info-grid {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Further reduce the gap between items */
+        padding-bottom: 2rem; /* Adjust padding for small screens */
+    }
+
+    .info-item {
+        padding: 10px; /* More compact padding */
+        border-radius: 6px; /* Slightly smaller border radius */
+        box-shadow: 0 4px 10px rgba(0, 100, 0, 0.6); /* Lighter and smaller shadow */
+    }
+
+    .icon {
+        font-size: 1.6rem; /* Smaller icon size for mobile */
+    }
+
+    p {
+        font-size: 0.85rem; /* Further reduce font size for mobile readability */
+        margin-top: 8px; /* Adjust margin for compactness */
+    }
+}
+
+.disclaimer {
+    background-color: #e6f7e6; /* Light green background */
+    border: 2px solid #28a745; /* Green border */
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; /* More modern font */
+    max-width: 800px; /* Constrain width */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .disclaimer h3 {
+    color: #28a745; /* Green heading color */
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #28a745; /* Adds bottom border to heading */
+    padding-bottom: 8px;
+  }
+  
+  .disclaimer ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 0;
+  }
+  
+  .disclaimer ul li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #333;
+    padding-left: 28px;
+    position: relative;
+  }
+  
+  .disclaimer ul li::before {
+    content: "✔"; /* Green checkmark bullet */
+    color: #28a745;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+  
+
+
+
+
+  
+
+  
+
+                               /*********************** footer section ************************/
+
+
+/* General footer styles */
+footer {
+  background-color: #164727;
+  width: 100%;
+  /* Dark green background */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  /* Ensure consistent font */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  margin: 20px;
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for better layout */
+}
+
+.footer-section h3 {
+  font-family: 'Poppins', sans-serif;
+  color: #ccc;
+  margin-bottom: 15px;
+  font-size: 18px;
+  /* Slightly larger font size for headings */
+}
+
+.latest-updates form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Space between input and button */
+}
+
+.latest-updates input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  /* Ensure input takes full width */
+  max-width: 300px;
+  /* Limit width for larger screens */
+}
+
+.latest-updates button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  /* Green button */
+  color: white;
+  cursor: pointer;
+}
+
+.latest-updates button:hover {
+  background-color: #45a049;
+  /* Slightly darker green on hover */
+}
+
+.more-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-info ul li {
+  margin: 10px 0;
+}
+
+.more-info ul li a {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  /* Slightly larger font size */
+}
+
+.more-info ul li a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+.social-icons a {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 24px;
+  /* Larger icon size */
+}
+
+.social-icons a:hover {
+  color: #4CAF50;
+  /* Green color on hover */
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  font-family: 'Poppins', sans-serif;
+  
+  color: #ddd;
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer-links {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  font-size: 14px;
+  /* Slightly smaller font size */
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  /* Underline .developer-credit {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #ffffff;
+  /* Set a neutral color for the text */
+  text-align: center;
+  /* Center the text */
+  margin-top: 20px;
+  /* Add some space above */
+}
+
+.developer-credit a {
+  color: #000000;
+  /* Set the link color */
+  text-decoration: none;
+  /* Remove the underline */
+  font-weight: bold;
+  /* Make the link bold */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.developer-credit a:hover {
+  color: #000000;
+  /* Change link color on hover */
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+
+
+.developer-credit {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+}
+
+.developer-credit a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.developer-credit a:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+
+input[type="date"],
+input[type="text"],
+input[type="number"],
+select {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 80%;
+  /* Ensures the input fields take full width within their container */
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+
+.footer-bottom .info {
+  color: white;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*********************** footer section ************************/
+
+
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="custom.css">
+  
+    <title>Coustom Form</title>
+</head>
+<body>
+
+
+
+   
+    <div class="background1">
+        <!-- Top Navbar -->
+        <nav class="top-nav">
+            <div class="top-nav-content">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:yourmail@gmail.com">info@trekkerspakistan.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+1234567890">+92 3456 7890</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <nav>
+            <div class="logo">
+                <img src="https://firebasestorage.googleapis.com/v0/b/trakkerz-c2667.appspot.com/o/Untitled%20design%20(20)%20(1).png?alt=media&token=2bbcb714-a333-4703-a1d4-2cc778be99e7" alt="Brand Logo" class="logo-img" height="110px">
+            </div>
+
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+
+
+            <!--   2nd nav bar -->
+            <ul>
+
+            <input type="checkbox" id="click" />
+            <label for="click" class="close-btn">
+                <i class="close-btn">✖</i>
+            </label>
+                <li><a id="home-link" class="nav-link active" href="index.html">Home</a></li>
+                <li><a id="destination-link" class="nav-link" href="/index.html#explore-section">Destinations</a></li>
+                
+                <!-- Dropdown for Domestic Tour -->
+                <li class="dropdown">
+                    <a id="services-link" class="nav-link dropdown-link" href="javascript:void(0);">Domestic Tours</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/Pages/Naran Kaghan.html">Naran Kaghan</a></li>
+                        <li><a href="/Pages/Sawat Valley.html">Sawat Valley</a></li>
+                        <li><a href="/Pages/Fairy Meadows.html">Fairy Meadows</a></li>
+                        <li><a href="/Pages/Murree Tour All Packages.HTML">Murree</a></li>
+                        <li><a href="/Pages/Hunza Valley Tour All Packages BY Road..html">Hunza Valley</a></li>
+                        <li><a href="/Pages/Nathia Gali Tour All Packages.html">Nathia Gali</a></li>
+                        <li><a href="/Pages/Skardu Valley Tour All Packages.html">Skardu Valley</a></li>
+                        <li><a href="/Pages/Neelum Valley Tour All Packages.html">Neelam Valley</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Dropdown for International Tour -->
+                <li class="dropdown">
+                    <a id="packages-link" class="nav-link dropdown-link" href="javascript:void(0);">International Tours</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/Pages/Maldives Tour Package.html">Maldives Tour</a></li>
+                        <li><a href="/Pages/Turkey Tour Packages.html">Turkey Tour</a></li>
+                        <li><a href="/Pages/Malaysia Tour Package.html">Malaysia Tour</a></li>
+                        <li><a href="/Pages/Thailand Tour Package.html">Thailand Tour</a></li>
+                        <li><a href="/Pages/Dubai Tour Packages.html">Dubai Tour</a></li>
+                        <li><a href="/Pages/Bali Tour Package.html">Bali Tour</a></li>
+                        <li><a href="/Pages/Baku Tour Packages.html">Baku Tour</a></li>
+                    </ul>
+                </li>
+                
+                <li><a id="blog-link" class="nav-link" href="/Blog/blog main page.html">Blog</a></li>
+                <li><a id="customize-link" class="nav-link" href="/coustomfrom.html">Customize Trip</a></li>
+            </ul>
+        </nav>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="image-container">
+            <img src="Journey Beyond.png" alt="Tour Image" class="header-image">
+        </div>
+
+
+
+
+
+
+    
+<!--               COUSTOM    FROM TOURS         -->
+
+<div class="background-container">
+    <header>
+        <h1>Custom Tours Form</h1>
+    </header>
+    
+    <div class="form-container">
+        <main>
+            <form id="tourForm" action="your-server-endpoint" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0301 2345678" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tour Details</legend>
+                    <div class="form-group">
+                        <label for="dateTime">Date / Time *</label>
+                        <input type="datetime-local" id="dateTime" name="dateTime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numAdults">Number of Adults *</label>
+                        <input type="number" id="numAdults" name="numAdults" placeholder="Number of Adults" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numChildren">Total Number of Children *</label>
+                        <input type="number" id="numChildren" name="numChildren" placeholder="Total Number of Children" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="childrenAges">Children Ages *</label>
+                        <input type="text" id="childrenAges" name="childrenAges" placeholder="Children Ages (Year)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numRooms">Number of Rooms *</label>
+                        <input type="number" id="numRooms" name="numRooms" placeholder="Number of Rooms" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departureCity">Departure From (City) *</label>
+                        <select id="departureCity" name="departureCity" required>
+                            <option value="" disabled selected>Select City</option>
+                            <option value="karachi">Karachi</option>
+                            <option value="lahore">Lahore</option>
+                            <option value="islamabad">Islamabad</option>
+                            <option value="rawalpindi">Rawalpindi</option>
+                            <option value="peshawar">Peshawar</option>
+                            <option value="quetta">Quetta</option>
+                            <option value="faisalabad">Faisalabad</option>
+                            <option value="multan">Multan</option>
+                            <option value="gujranwala">Gujranwala</option>
+                            <option value="sialkot">Sialkot</option>
+                            <option value="hyderabad">Hyderabad</option>
+                            <option value="bahawalpur">Bahawalpur</option>
+                            <option value="sukkur">Sukkur</option>
+                            <option value="sargodha">Sargodha</option>
+                            <option value="abbottabad">Abbottabad</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tourType">Tour Type *</label>
+                        <select id="tourType" name="tourType" required>
+                            <option value="" disabled selected>Select Tour Type</option>
+                            <option value="domestic">Domestic</option>
+                            <option value="international">International</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tripDuration">Duration of Trip *</label>
+                        <input type="text" id="tripDuration" name="tripDuration" placeholder="Duration of Trip" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Additional notes"></textarea>
+                        <small>0 of 1000 max characters.</small>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+        </main>
+    </div>
+</div>
+
+
+
+
+
+
+
+      <!--FOOTER-->
+      <footer>
+        <div class="footer-container">
+            <div class="footer-section latest-updates">
+                <h3>Get latest tour updates:</h3>
+                <form id="whatsappForm">
+                    <input type="text" id="messageInput" placeholder="Come, Let's Plan" required>
+                    <button type="submit">WHATSAPP</button>
+                </form>
+
+            </div>
+
+            <div class="footer-section more-info">
+                <h3>More Information</h3>
+                <ul>
+                    <li><a href="/contact us/contact us.html">Contact</a></li>
+                    <li><a href="/about us/about us.html">About Us</a></li>
+                    <li><a href="/coustomfrom.html">Customize My Tour</a></li>
+                    <li><a href="/Blog/blog main page.html">Blogs</a></li>
+                    <li><a href="/Blog/blog main page.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>We are social!</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/thetrekkerz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/thetrekkerspakistan?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-google"></i></a>
+                    <a href="https://pk.linkedin.com/company/the-trekkerz" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/+923096666871" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>info@trekkerspakistan.com 2005-2024. All rights reserved</p>
+            <div class="footer-links">
+                <a href="#explore-section">Tours</a> |
+                <a href="#montainer-section">Car rentals</a> |
+                <a href="#explore-section">Partner hotels</a> |
+                <a href="https://wa.me/+923096666871">Contact</a>
+            </div>
+            <p class="developer-credit">
+                Website developed by <a href="https://www.devrexdigital.com" target="_blank">@Devrex</a>
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!--FOOTER-->
+
+
+
+
+
+
+
+
+    
+    <!-- WhatsApp Floating Button -->
+
+    <a href="https://wa.me/+923337384660" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+            class="whatsapp-icon">
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="custom.js"></script>
+</body>
+</html>
